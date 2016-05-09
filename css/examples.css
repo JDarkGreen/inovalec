@@ -1,0 +1,83 @@
+.image_carousel {
+    float: left;
+    height: auto;
+	margin-left: 6px;
+	padding-bottom:5px;
+    position: relative; 
+	left:0;
+	right:0;
+    width: 940px;
+}
+
+.image_carousel .caroufredsel_wrapper a {
+	display: block;
+/*	float: left; */
+}
+.image_carousel img {
+	background-color: white;
+	height:180px;
+/*    margin: 2px;
+    padding: 5px;
+	display: block;
+	float: left;*/
+}
+
+.transparent p.view_scripts {
+	margin: 0;
+	padding: 10px 0 10px 25px;
+	position: relative;
+}
+.transparent p.view_scripts a {
+	text-decoration: none;
+	color: #999;
+	font-weight: bold;
+	padding-left: 20px;
+}
+.transparent p.view_scripts a:hover, .transparent p.view_scripts a.selected {
+	color: #333;
+}
+a.prev, a.next, a.play, a.pause {
+	background: url(../images/miscellaneous_sprite.png) 0 0 no-repeat transparent;
+	width: 45px;
+	height: 63px;
+	display: block;
+	position: absolute;
+}
+
+a.prev, a.next {
+	top: 144px;
+}
+.list_carousel a.prev, .list_carousel a.next {
+	top: 30px;
+}
+a.play, a.pause {
+	top: 185px;
+	left: 50%;
+	margin-left: -22px;
+	z-index: 200;
+}
+a.next {
+/*	right: -22px;*/
+	right:-4px;
+}
+a.prev {
+/*	left: -22px;*/
+	left:-5px;
+}
+a.prev:hover {			background-position: 0 -76px; }
+a.prev.disabled {		background-position: 0 -76px !important; cursor: default; }
+a.next {				background-position: -51px -76px; }
+a.next:hover {			background-position: -50px -12px; }
+a.next.disabled {		background-position: -50px -76px !important; cursor: default; }
+a.play {				background-position: -150px 0; }
+a.play:hover {			background-position: -150px -50px; }
+a.play.disabled {		background-position: -150px -100px !important; cursor: default; }
+a.play.paused {			background-position: -100px 0; }
+a.play.paused:hover {	background-position: -100px -50px; }
+a.pause {				background-position: -150px 0; }
+a.pause:hover {			background-position: -150px -50px; }
+a.pause.disabled {		background-position: -150px -100px !important; cursor: default; }
+
+a.prev span, a.next span, a.play span, a.pause span {
+	display: none;
+}

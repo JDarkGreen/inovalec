@@ -1,0 +1,6 @@
+/* Eliminamos los estilos por defecto del navegador */
+@import url(reset.css);
+
+/* Importamos los estilos de composición */
+@import url("estilos.css");
+
