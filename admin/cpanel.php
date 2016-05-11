@@ -12,7 +12,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="css/estilos.css"/>
-<title>JBG Electric - Panel de administracion</title>
+<title>INOVALEC - Panel de administracion</title>
 </head>
 
 <body>

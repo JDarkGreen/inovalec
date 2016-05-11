@@ -26,7 +26,7 @@
 		document.location.href="index.php";
 	}
 </script>
-<title>JBG Electric - Panel de administracion</title>
+<title>INOVALEC - Panel de administracion</title>
 </head>
 
 <body>

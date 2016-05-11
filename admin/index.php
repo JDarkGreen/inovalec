@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>JBG Electric - Autenticacion de usuarios</title>
+<title>INOVALEC - Autenticacion de usuarios</title>
 <link href="css/global.css" rel="stylesheet" type="text/css" />
 <link href="css/estilos-admin.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
