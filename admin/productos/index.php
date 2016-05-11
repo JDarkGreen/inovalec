@@ -27,8 +27,8 @@
 				   AND p.idmarca = m.idmarca
 				   ".$condicion."
 				   ORDER BY p.idmarca ASC";
-	$rpta_datos = query($sql_datos,$cn) or die(mysql_error());
-	
+
+	$rpta_datos = query($sql_datos) or die(mysql_error());
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -55,7 +55,7 @@
 	}	
 	
 </script>
-<title>JBG Electric - Panel de administracion</title>
+<title>INOVALEC - Panel de administracion</title>
 </head>
 
 <body>
@@ -88,10 +88,11 @@
                         <?php
 						$sql_marcas  = "SELECT * FROM marcas ORDER BY nombre_marca ASC";
 						$rpta_marcas = query($sql_marcas,$cn) or die(mysql_error());
+						$row_marcas = fetch_array($rpta_marcas);
 						
-						while($row_marcas = fetch_array($rpta_marcas))
+						foreach( $row_marcas as $row_marca )
 						{
-							echo "<option value='".$row_marcas['idmarca']."'>".$row_marcas['nombre_marca']."</option>";
+							echo "<option value='".$row_marca['idmarca']."'>".$row_marca['nombre_marca']."</option>";
 						}                    
 					
 					?>
@@ -103,8 +104,9 @@
 						$padre 			= ($padre == null) ? 'IS NULL' : ' = ' . $padre;
 						$sql_categoria  = "SELECT * FROM secciones WHERE idpadre ".$padre." ORDER BY seccion ASC";
 						$rpta_categoria = query($sql_categoria,$cn) or die(mysql_error());
+						$rows_categoria = fetch_array($rpta_categoria);
 						
-						while($row_categoria = fetch_array($rpta_categoria))
+						foreach( $rows_categoria as $row_categoria )
 						{
 							echo "<option value='".$row_categoria['idseccion']."'>".$row_categoria['seccion']."</option>";
 						}                    
@@ -130,8 +132,10 @@
                <td width="78">Eliminar</td>
             </tr>
             <?php
+
+        $filas = $rpta_datos;
     
-		while($fila = mysql_fetch_array($rpta_datos))
+		foreach( $filas as $fila )
 		{	
 			// subseccion.
 			$sql_dato1   = "SELECT s.seccion as subseccion FROM secciones s WHERE s.idseccion='".$fila['idsubseccion']."'";

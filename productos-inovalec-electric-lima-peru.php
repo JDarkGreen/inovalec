@@ -16,7 +16,7 @@
   $subnivel    = $_GET['subnivel'];  
 
   //setear el título
-  $title = "JBG ELECTRIC | Historia de la empresa, Eventos, Equipos Electricos Peru,  repuestos electricos,  productos por linea, materiales instalaciones electricas industrial, automatizacion industrial, conductores electricos, equipo de media tension control y proteccion, equipos de seguridad y maniobra, ferreteria de electrificacion, iluminacion peru, instrumentos de medicion, linea conduit, materiales aislantes, materiales para instalaciones residenciales, pararrayos, sistema puesta tierra y afines, seguridad industrial lima peru, repuestos electricos lima peru, material construccion electricos,  productos por marcas 3m, lima abb abro aibar, bremas  celsa cirmarker lima, coel crc elcope lima, exosolda general electric indeco peru, kss legrand leviton peru, loctite lumnia mennekes peru, schneider electric siemens peru, talma ide termoweld lima, solera jsl santos peru dexson tecnoflex ls repuestos peru, tecnofil bticino orbis metal&a opalux hurricane lima peru";
+  $title = "INOVALEC S.A.C. | Historia de la empresa, Eventos, Equipos Electricos Peru,  repuestos electricos,  productos por linea, materiales instalaciones electricas industrial, automatizacion industrial, conductores electricos, equipo de media tension control y proteccion, equipos de seguridad y maniobra, ferreteria de electrificacion, iluminacion peru, instrumentos de medicion, linea conduit, materiales aislantes, materiales para instalaciones residenciales, pararrayos, sistema puesta tierra y afines, seguridad industrial lima peru, repuestos electricos lima peru, material construccion electricos,  productos por marcas 3m, lima abb abro aibar, bremas  celsa cirmarker lima, coel crc elcope lima, exosolda general electric indeco peru, kss legrand leviton peru, loctite lumnia mennekes peru, schneider electric siemens peru, talma ide termoweld lima, solera jsl santos peru dexson tecnoflex ls repuestos peru, tecnofil bticino orbis metal&a opalux hurricane lima peru";
 
   //incluir plantilla header
   include('includes/main-header.php');
@@ -111,7 +111,7 @@
                   <ul>
                     <?php foreach( $row_marcas as $marca ) : ?>
                       <li>
-                        <a href="marcas-jbg-electric-lima-peru.php?marca=<?= $marca['idmarca']; ?>&nom_marca=<?= $marca['nombre_marca']; ?>" title="<?= $marca['nombre_marca']; ?>"><?= ucfirst( strtoupper($marca['nombre_marca']) ); ?></a>
+                        <a href="marcas-inovalec-electric-lima-peru.php?marca=<?= $marca['idmarca']; ?>&nom_marca=<?= $marca['nombre_marca']; ?>" title="<?= $marca['nombre_marca']; ?>"><?= ucfirst( strtoupper($marca['nombre_marca']) ); ?></a>
                       </li>
                     <?php endforeach; ?>
                   </ul>
@@ -156,7 +156,7 @@
                     <td align="center" class="tdrow1"><?= $producto['modelo']; ?></td>
                     <!-- Detalle -->
                     <td align="center" class="tdrow1">
-                      <a href="jbg-electric-detalle-producto-lima-peru.php?idmarca=<?= $idmarca; ?>&idseccion=<?= $idseccion; ?>&nom_marca=<?= $nom_marca; ?>&seccion=<?= $seccion; ?>&subseccion=<?= $subseccion1; ?>&subnivel=<?= $subnivel; ?>&producto=<?= $producto['idproducto']; ?>#marca" class="vermas_productos"><img src="images/ver-detalle.png" width="90" height="29" /></a>
+                      <a href="inovalec-electric-detalle-producto-lima-peru.php?idmarca=<?= $idmarca; ?>&idseccion=<?= $idseccion; ?>&nom_marca=<?= $nom_marca; ?>&seccion=<?= $seccion; ?>&subseccion=<?= $subseccion1; ?>&subnivel=<?= $subnivel; ?>&producto=<?= $producto['idproducto']; ?>#marca" class="vermas_productos"><img src="images/ver-detalle.png" width="90" height="29" /></a>
                     </td><!-- /center -->
                   </tr>
                 <?php endforeach; ?>
@@ -169,17 +169,7 @@
           <!-- Saltos de Línea --> <br/><br/>
 
           <!-- Seccion incluir marcas -->
-          <section class="sectionMarcas">
-              <div id="owl-carousel-marcas" class="">
-                <div class="item"><img src="images/carousel-marcas/marca-3m-jbg.jpg" alt="" class="responsive-img" /></div>
-                <div class="item"><img src="images/carousel-marcas/marca-abb-jbg.jpg" alt="" class="responsive-img" /></div>
-                <div class="item"><img src="images/carousel-marcas/marca-abro-jbg.jpg" alt="" class="responsive-img" /></div>
-                <div class="item"><img src="images/carousel-marcas/marca-aibar-jbg.jpg" alt="" class="responsive-img" /></div>
-                <div class="item"><img src="images/carousel-marcas/marca-amp-jbg.jpg" alt="" class="responsive-img" /></div>
-                <div class="item"><img src="images/carousel-marcas/marca-bahaco-jbg.jpg" alt="" class="responsive-img" /></div>
-                <div class="item"><img src="images/carousel-marcas/marca-bticino-jbg.jpg" alt="" class="responsive-img" /></div>
-              </div><!-- /.owl-carousel -->
-          </section><!-- /sectionMarcas -->
+          <?php include("includes/section-marcas.php") ?>
 
         </div><!-- /.row -->
       </div><!-- /.container -->

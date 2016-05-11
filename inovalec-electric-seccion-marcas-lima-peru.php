@@ -53,7 +53,7 @@
           <div class="col s12 m6">
             <!-- Buscador -->
             <div id="form_buscar-1">
-              <form action="jbg-electric-resultados-busqueda-lima-peru.php" method="post" id="frmbuscar" name="frmbuscar">
+              <form action="inovalec-electric-resultados-busqueda-lima-peru.php" method="post" id="frmbuscar" name="frmbuscar">
                 <p>Buscar producto</p>
                 <p><input type="text" value="" class="borde_texto" id="buscar" name="buscar" /></p>
               </form><!-- /.form -->
@@ -76,10 +76,12 @@
                 $sql_dato2  = "SELECT s.seccion as nivel FROM secciones s WHERE s.idseccion='".$nivel['niveles']."'";
                 $rpta_dato2 = query($sql_dato2) or die(mysql_error());
                 $fila_dato2 = fetch_array($rpta_dato2);
+
+                #var_dump($fila_dato2);
             ?>
               <ul class="dos_columnas">
                 <li>
-                  <a href="jbg-electric-subseccion-marcas-lima-peru.php?idseccion=<?= $nivel['idseccion'] ?>&idsubseccion=<?= $nivel['niveles'] ?>&idmarca=<?= $idmarca ?>&nom_marca=<?= $nom_marca ?>&seccion=<?= $row_submarca[0]['seccion'] ?>&subseccion=<?= $fila_dato2[0]['nivel'] ?>"> <?= $fila_dato2[0]['nivel'] ?>
+                  <a href="inovalec-electric-subseccion-marcas-lima-peru.php?idseccion=<?= $nivel['idseccion'] ?>&idsubseccion=<?= $nivel['niveles'] ?>&idmarca=<?= $idmarca ?>&nom_marca=<?= $nom_marca ?>&seccion=<?= $row_submarca[0]['seccion'] ?>&subseccion=<?= $fila_dato2[0]['nivel'] ?>"> <?= $fila_dato2[0]['nivel'] ?>
                   </a>
                 </li>
               </ul><!-- /dos_columas -->
@@ -93,17 +95,7 @@
           <!-- Saltos de Línea --> <br/><br/>
 
           <!-- Seccion incluir marcas -->
-          <section class="sectionMarcas">
-              <div id="owl-carousel-marcas" class="">
-                <div class="item"><img src="images/carousel-marcas/marca-3m-jbg.jpg" alt="" class="responsive-img" /></div>
-                <div class="item"><img src="images/carousel-marcas/marca-abb-jbg.jpg" alt="" class="responsive-img" /></div>
-                <div class="item"><img src="images/carousel-marcas/marca-abro-jbg.jpg" alt="" class="responsive-img" /></div>
-                <div class="item"><img src="images/carousel-marcas/marca-aibar-jbg.jpg" alt="" class="responsive-img" /></div>
-                <div class="item"><img src="images/carousel-marcas/marca-amp-jbg.jpg" alt="" class="responsive-img" /></div>
-                <div class="item"><img src="images/carousel-marcas/marca-bahaco-jbg.jpg" alt="" class="responsive-img" /></div>
-                <div class="item"><img src="images/carousel-marcas/marca-bticino-jbg.jpg" alt="" class="responsive-img" /></div>
-              </div><!-- /.owl-carousel -->
-          </section><!-- /sectionMarcas -->
+          <?php include("includes/section-marcas.php") ?>
 
         </div><!-- /.row -->
       </div><!-- /.container -->

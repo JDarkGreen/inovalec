@@ -39,7 +39,7 @@
           <div class="col s12 m6">
             <!-- Buscador -->
             <div id="form_buscar-1">
-              <form action="jbg-electric-resultados-busqueda-lima-peru.php" method="post" id="frmbuscar" name="frmbuscar">
+              <form action="inovalec-electric-resultados-busqueda-lima-peru.php" method="post" id="frmbuscar" name="frmbuscar">
                 <p>Buscar producto</p>
                 <p><input type="text" value="" class="borde_texto" id="buscar" name="buscar" /></p>
               </form><!-- /.form -->

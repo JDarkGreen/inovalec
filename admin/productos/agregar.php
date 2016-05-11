@@ -70,10 +70,11 @@
                   
                         $sql_marcas  = "SELECT * FROM marcas";
                         $rpta_marcas = query($sql_marcas) or die(mysql_error());
+                        $row_marcas = fetch_array($rpta_marcas);
                         
-                        while($row_marcas = fetch_array($rpta_marcas))
+                        foreach( $row_marcas as $row_marca )
                         {
-                            echo "<option value=".$row_marcas['idmarca'].">".$row_marcas['nombre_marca']."</option>";	
+                            echo "<option value=".$row_marca['idmarca'].">".$row_marca['nombre_marca']."</option>";	
                         }
                   
                   ?>
@@ -86,10 +87,9 @@
 							$padre = ($padre == null) ? 'IS NULL' : ' = ' . $padre;
                             $sql = "SELECT * FROM secciones WHERE idpadre ".$padre." ORDER BY seccion ASC";
                             $rpta = query($sql,$cn) or die(mysql_error());
+                            $rows = fetch_array($rpta);
                         
-                        ?>
-                                    <?php
-                                while ($row = fetch_array($rpta)){
+                           foreach( $rows as $row ){
                                     echo "<option value=".$row['idseccion'].">".$row['seccion']."</option>";
                                 }
                         ?>
@@ -130,8 +130,9 @@
                   
                         $sql_fabricante  = "SELECT * FROM logos_marcas";
                         $rpta_fabricante = query($sql_fabricante) or die(mysql_error());
-                        
-                        while($row_fabricante = fetch_array($rpta_fabricante))
+                        $rows_fabricante = fetch_array($rpta_fabricante);
+
+                        foreach( $rows_fabricante as $row_fabricante)
                         {
                             echo "<option value=".$row_fabricante['idlogo'].">".$row_fabricante['imagen_marca']."</option>";	
                         }

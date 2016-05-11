@@ -12,9 +12,15 @@
 	
 	$cn = Conexion();
 	
-	$sql_editar  = "SELECT * FROM productos WHERE idproducto = '".$_GET['idproducto']."'";
-	$rpta_editar = query($sql_editar) or die(mysql_error());
-	$fila		 = fetch_array($rpta_editar);
+  $sql_editar  = "SELECT * FROM productos WHERE idproducto = '".$_GET['idproducto']."'";
+
+  #examinar codigo
+  $rpta_editar = query($sql_editar) or die(mysql_error());
+  $filas       = fetch_array($rpta_editar);
+  $fila        = $filas[0];
+
+  #var_dump( $fila );
+
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -76,13 +82,14 @@
                   
 								$sql_marcas  = "SELECT * FROM marcas";
 								$rpta_marcas = query($sql_marcas) or die(mysql_error());
+                $row_marcas  = fetch_array($rpta_marcas);
 								
-								while($row_marcas = fetch_array($rpta_marcas)){
-									echo "<option value='".$row_marcas['idmarca']."'";
-									if($fila['idmarca'] == $row_marcas['idmarca']){	
+								foreach( $row_marcas as $row_marca ){
+									echo "<option value='".$row_marca['idmarca']."'";
+									if($fila['idmarca'] == $row_marca['idmarca']){	
 										echo "selected";
 									}
-										echo ">".$row_marcas['nombre_marca']."</option>";
+										echo ">".$row_marca['nombre_marca']."</option>";
 								}								
                   
                   			?>
@@ -92,11 +99,12 @@
                                  <select name="seccion" class="formularios" id="seccion" onchange="niveles(this.value);">
                                     <option value="">--seleccione--</option>
                                     <?php	
-								$padre = ($padre == null) ? 'IS NULL' : ' = ' . $padre;
-								$sql = "SELECT * FROM secciones WHERE idpadre ".$padre." ORDER BY seccion ASC";
-								$rpta = query($sql,$cn) or die(mysql_error());
+                $padre = ($padre == null) ? 'IS NULL' : ' = ' . $padre;
+                $sql   = "SELECT * FROM secciones WHERE idpadre ".$padre." ORDER BY seccion ASC";
+                $rpta  = query($sql) or die(mysql_error());
+                $rows  = fetch_array($rpta);
                         
-								while($row = fetch_array($rpta)){
+								foreach( $rows as $row ){
 									echo "<option value='".$row['idseccion']."'";
 									if($fila['idseccion'] == $row['idseccion']){	
 										echo "selected";
@@ -122,8 +130,9 @@
                                 
                                 $sql_subseccion  = "SELECT * FROM secciones ".$condicion."";
                                 $rpta_subseccion = query($sql_subseccion,$cn) or die(mysql_error());
+                                $row_subsecciones = fetch_array($rpta_subseccion);
                             	
-								while($row_subseccion = fetch_array($rpta_subseccion))
+								foreach( $row_subsecciones as $row_subseccion )
 								{
 									echo "<option value='".$row_subseccion['idseccion']."'";
 									if($fila['niveles'] == $row_subseccion['idseccion'])
@@ -149,15 +158,16 @@
                                 
                                 $sql_niveles  = "SELECT * FROM secciones ".$condicion1."";
                                 $rpta_niveles = query($sql_niveles,$cn) or die(mysql_error());
+                                $row_niveles  = fetch_array($rpta_niveles);
                             	
-								while($row_niveles = fetch_array($rpta_niveles))
+								foreach( $row_niveles as $row_nivel )
 								{
-									echo "<option value='".$row_niveles['idseccion']."'";
-									if($fila['subniveles'] == $row_niveles['idseccion'])
+									echo "<option value='".$row_nivel['idseccion']."'";
+									if($fila['subniveles'] == $row_nivel['idseccion'])
 									{	
 										echo "selected";
 									}
-										echo ">".$row_niveles['seccion']."</option>";
+										echo ">".$row_nivel['seccion']."</option>";
 								}						
 								
                             ?>
@@ -185,7 +195,9 @@
                         $sql_fabricante  = "SELECT * FROM logos_marcas";
                         $rpta_fabricante = query($sql_fabricante) or die(mysql_error());
                         
-						while($row_fabricante = fetch_array($rpta_fabricante)){
+                        $rows_fabricante = fetch_array($rpta_fabricante);
+                        
+						foreach( $rows_fabricante as $row_fabricante ){
 							echo "<option value='".$row_fabricante['idlogo']."'";
 							if($fila['idlogo'] == $row_fabricante['idlogo']){	
 								echo "selected";

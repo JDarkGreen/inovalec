@@ -46,7 +46,7 @@
           <div class="col s12 m6">
             <!-- Buscador -->
             <div id="form_buscar-1">
-              <form action="jbg-electric-resultados-busqueda-lima-peru.php" method="post" id="frmbuscar" name="frmbuscar">
+              <form action="inovalec-electric-resultados-busqueda-lima-peru.php" method="post" id="frmbuscar" name="frmbuscar">
                 <p>Buscar producto</p>
                 <p><input type="text" value="" class="borde_texto" id="buscar" name="buscar" /></p>
               </form><!-- /.form -->
@@ -69,7 +69,7 @@
             ?>
               <ul class="dos_columnas">
                 <li>
-                  <a href="linea-productos-jbg-electric-lima-peru.php?idsubnivel=<?= $row['idseccion'] ?>&nom_marca=<?= $linea ?>&seccion=<?= $row['seccion'] ?>&subnivel=<?= $row['seccion'] ?>#lineas"><?= $row['seccion'] ?>
+                  <a href="linea-productos-inovalec-electric-lima-peru.php?idsubnivel=<?= $row['idseccion'] ?>&nom_marca=<?= $linea ?>&seccion=<?= $row['seccion'] ?>&subnivel=<?= $row['seccion'] ?>#lineas"><?= $row['seccion'] ?>
                   </a> <!-- /. -->
                 </li> <!-- /li -->
               </ul> <!-- /dos_columnas -->

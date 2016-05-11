@@ -14,12 +14,13 @@
 			$condicion .= "WHERE idpadre='".$id."'";
 		}	
 		
-    	$sql = "SELECT * FROM secciones ".$condicion."";
-		$rpta = query($sql,$cn) or die(mysql_error());
+		$sql  = "SELECT * FROM secciones ".$condicion."";
+		$rpta = query($sql) or die(mysql_error());
+		$rows = fetch_array($rpta);
     
     ?>	
 	<?php
-			while ($row = fetch_array($rpta)){
+			foreach( $rows as $row ){
 				echo "<option value=".$row['idseccion'].">".$row['seccion']."</option>";
 			}
 	?>

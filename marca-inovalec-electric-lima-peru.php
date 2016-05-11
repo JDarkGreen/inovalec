@@ -77,7 +77,7 @@
             ?>
               <ul class="dos_columnas">
                 <li>
-                  <a href="jbg-electric-seccion-marcas-lima-peru.php?idseccion=<?= $marca['idseccion'] ?>&idmarca=<?= $idmarca ?>&nom_marca=<?= $nom_marca ?>#marca"> <?= $marca['seccion'] ?>
+                  <a href="inovalec-electric-seccion-marcas-lima-peru.php?idseccion=<?= $marca['idseccion'] ?>&idmarca=<?= $idmarca ?>&nom_marca=<?= $nom_marca ?>#marca"> <?= $marca['seccion'] ?>
                   </a>
                 </li>
               </ul><!-- /dos_columas -->
@@ -92,17 +92,7 @@
           <br/><br/>
 
           <!-- Seccion incluir marcas -->
-          <section class="sectionMarcas">
-              <div id="owl-carousel-marcas" class="">
-                <div class="item"><img src="images/carousel-marcas/marca-3m-jbg.jpg" alt="" class="responsive-img" /></div>
-                <div class="item"><img src="images/carousel-marcas/marca-abb-jbg.jpg" alt="" class="responsive-img" /></div>
-                <div class="item"><img src="images/carousel-marcas/marca-abro-jbg.jpg" alt="" class="responsive-img" /></div>
-                <div class="item"><img src="images/carousel-marcas/marca-aibar-jbg.jpg" alt="" class="responsive-img" /></div>
-                <div class="item"><img src="images/carousel-marcas/marca-amp-jbg.jpg" alt="" class="responsive-img" /></div>
-                <div class="item"><img src="images/carousel-marcas/marca-bahaco-jbg.jpg" alt="" class="responsive-img" /></div>
-                <div class="item"><img src="images/carousel-marcas/marca-bticino-jbg.jpg" alt="" class="responsive-img" /></div>
-              </div><!-- /.owl-carousel -->
-          </section><!-- /sectionMarcas -->
+          <?php include("includes/section-marcas.php") ?>          
 
         </div><!-- /.row -->
       </div><!-- /.container -->

@@ -23,7 +23,7 @@
 		
 		<ul class="cuatro_columnas">
     		<li>
-    			<a href="marca-jbg-electric-lima-peru.php?marca=<?= $marcas['idmarca'].'&nom_marca='.$marcas['nombre_marca'].'#marca' ?>"><?= $marcas['nombre_marca'] ?>
+    			<a href="marca-inovalec-electric-lima-peru.php?marca=<?= $marcas['idmarca'].'&nom_marca='.$marcas['nombre_marca'].'#marca' ?>"><?= $marcas['nombre_marca'] ?>
     			</a>
     		</li>
     	</ul>
