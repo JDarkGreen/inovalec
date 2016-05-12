@@ -93,7 +93,7 @@ $rpta_listar_promocion = listar_promociones(1);
             </ul><!-- /.submenu -->
           </li>
   				<li><a class="<?= $active == 4 ? 'active' : '' ?> waves-effect" href="servicios-inovalec-electric-lima-peru.php">servicios</a></li>
-  				<li><a class="<?= $active == 5 ? 'active' : '' ?> waves-effect" href="nuestras-inovalec-jbg-electric-lima-peru.php">marcas</a></li>
+  				<li><a class="<?= $active == 5 ? 'active' : '' ?> waves-effect" href="nuestras-marcas-inovalec-electric-lima-peru.php">marcas</a></li>
           <li><a class="<?= $active == 6 ? 'active' : '' ?> waves-effect" href="venta-en-linea-inovalec-electric-lima-peru.php">venta en línea</a></li>
   				<li><a class="<?= $active == 7 ? 'active' : '' ?> waves-effect" href="promociones-inovalec-electric-lima-peru.php">promociones</a></li>
   				<li><a class="<?= $active == 8 ? 'active' : '' ?> waves-effect" href="contactenos-inovalec-electric-lima-peru.php">contáctenos</a></li>

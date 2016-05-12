@@ -57,7 +57,9 @@
 	</section><!-- /.mainFooter__content -->
 	<!-- Barra de desarrollo -->
 	<section class="mainFooter__develop">
-		<p class="center text-uppercase">copyright <?= date('Y') ?> &copy; POWERBY Ingenioart</p>
+		<p class="center text-uppercase">copyright <?= date('Y') ?> &copy; POWERBY 
+			<a style="color:white;" target="_blank" href="http://www.ingenioart.com/">Ingenioart</a>
+		</p>
 	</section>
 </footer><!-- /.mainFooter -->
 	

@@ -14,7 +14,7 @@
      <li class="sep"></li>
      <li><a href="servicios-jbg-electric-lima-peru.php#servicio" id="m4" class="servicios">Servicios</a></li>
      <li class="sep"></li>
-     <li><a href="nuestras-marcas-jbg-electric-lima-peru.php#nuestras_marcas" id="m5" class="marcas">Marcas</a></li>
+     <li><a href="nuestras-marcas-inovalec-electric-lima-peru.php#nuestras_marcas" id="m5" class="marcas">Marcas</a></li>
      <li class="sep"></li>
      <li><a href="venta-en-linea-jbg-electric-lima-peru.php#ventas_linea" id="m6" class="ventas">Ventas en linea</a></li>
      <li class="sep"></li>    
