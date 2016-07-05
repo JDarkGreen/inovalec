@@ -19,8 +19,10 @@
     
     ?>	
 	<?php
-			while ($row = fetch_array($rpta)){
-				echo "<option value=".$row['idcategoria'].">".$row['categoria']."</option>";
-			}
+		$rows = fetch_array($rpta); 
+		foreach( $rows as $row )
+		{
+			echo "<option value=".$row['idcategoria'].">".$row['categoria']."</option>";
+		}
 	?>
 </select>

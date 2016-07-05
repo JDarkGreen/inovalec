@@ -31,7 +31,7 @@
 	}
 	
 </script>
-<title>JBG Electric - Panel de administracion</title>
+<title> INOVALEC - Panel de administración </title>
 </head>
 
 <body>
@@ -65,19 +65,18 @@
                <td width="76" class="tdrow1">Editar</td>
                <td width="83" class="tdrow1">Eliminar</td>
             </tr>
+
             <?php
-      		while($row_promocion = fetch_array($rpta_promocion))
-			{
-				
-	  ?>
+               $row_promociones = fetch_array($rpta_promocion);
+               foreach(  $row_promociones as  $row_promocion ) : 
+            ?>
             <tr>
                <td class="tdrow2"><?php echo $row_promocion['titulo_promocion']; ?></td>
                <td align="center" class="tdrow2"><a href="editar.php?idpromocion=<?php echo $row_promocion['idpromocion']; ?>"><img src="../imagenes/application_form_edit.png" width="16" height="16" border="0" /></a></td>
                <td align="center" class="tdrow2"><img src="../imagenes/application_form_delete.png" width="16" height="16" onclick="borrar('<?php echo $row_promocion['idpromocion']; ?>');" style="cursor:pointer;" /></td>
             </tr>
-            <?php
-			}
-	  ?>
+            <?php endforeach; ?>
+            
          </table>
       </form>
    </div>

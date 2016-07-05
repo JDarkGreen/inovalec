@@ -31,7 +31,7 @@
 	}
 	
 </script>
-<title>JBG Electric - Panel de administracion</title>
+<title> INOVALEC - Panel de administración </title>
 </head>
 
 <body>
@@ -41,11 +41,14 @@
       <p><?php echo "Bienvenido ".$_SESSION['admin_admin']; ?></p>
       <div id="cabecera_salir"> <a href="../cerrar-sistema.php">Cerrar sesion</a></div>
    </div>
+
    <div id="cabecera_portada"> </div>
+
    <div id="titulo_cpanel">
       <p>Marcas</p>
       <div id="regresar_cpanel"> <a href="../cpanel.php"> Regresar al Cpanel </a> </div>
    </div>
+
    <div id="contenido_cpanel">
       <form id="form1" name="form1" method="post">
          <table width="960" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -70,8 +73,11 @@
                <td>Editar</td>
                <td>Eliminar</td>
             </tr>
-            <?php
-      		while($row_marca = fetch_array($rpta_marcas))
+            <?php 
+               $row_marcas = fetch_array($rpta_marcas);
+               foreach( $row_marcas )
+
+               while()
 			{
 				
 	  ?>

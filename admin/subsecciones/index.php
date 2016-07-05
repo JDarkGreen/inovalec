@@ -54,7 +54,7 @@
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="../css/estilos.css"/>
-<title>JBG Electric - Panel de administracion</title>
+<title> INOVALEC - Panel de administración </title>
 </head>
 
 <body>
@@ -85,28 +85,37 @@
                <td width="47">Estado</td>
                <td colspan="3" align="center">Operaciones</td>
             </tr>
+
             <?php
-  		while($row_subsecciones = fetch_array($rpta_subsecciones))
-		{
-  ?>
+            	$row_subsecciones = fetch_array($rpta_subsecciones);
+            	foreach( $row_subsecciones as $row_subseccion ) :
+            ?>
             <tr>
-               <td class="tdrow2"><?php echo $row_subsecciones['seccion']; ?></td>
-               <td class="tdrow2"><?php if($row_subsecciones['estado']==1){ ?>
-                  <div align="center"> <a href="javascript:changeState2('idseccion=<?=$row_subsecciones['idseccion']; ?>&idpadre=<?=$row_subsecciones['idpadre']; ?>&stUsuario=<?=$row_subsecciones['estado']?>',<?=$row_subsecciones['estado']?>,'seccion')"> <img src="../imagenes/accept.png" alt="Producto destacado" title="Producto destacado" width="14" height="14" border="0" /> </a> </div>
-                  <?php
-			}
-	    ?>
-                  <?php if($row_subsecciones['estado']==0){ ?>
-                  <div align="center"> <a href="javascript:changeState2('idseccion=<?=$row_subsecciones['idseccion'];?>&idpadre=<?=$row_subsecciones['idpadre']; ?>&stUsuario=<?=$row_subsecciones['estado']?>',<?=$row_subsecciones['estado']?>,'seccion')"> <img src="../imagenes/no-accept.png" alt="Producto no destacado" title="Producto no destacado" width="16" height="16" border="0" /></a></div>
-                  <?php } ?></td>
-               <td width="54" align="center" class="tdrow2"><a href="../subsecciones/index.php?idsubseccion=<?php echo $row_subsecciones['idseccion']; ?>"><img src="../imagenes/ico_mapa.gif" width="19" height="15" border="0" alt="Subcategorias" title="Subcategorias" /></a></td>
-               <td width="51" align="center" class="tdrow2"><a href="editar.php?id=<?php echo $row_subsecciones['idseccion']; ?>&idsubseccion=<?php echo $row_subsecciones['idpadre'];?>"><img src="../imagenes/application_form_edit.png" width="16" height="16" border="0" /></a></td>
-               <td width="42" align="center" class="tdrow2"><img src="../imagenes/application_form_delete.png" width="16" height="16" onclick="borrar('<?php echo $row_subsecciones['idseccion']; ?>','<?php echo $row_subsecciones['idpadre']; ?>')" style="cursor:pointer;" /></td>
+            	<td class="tdrow2"><?= $row_subseccion['seccion']; ?></td>
+
+            	<td class="tdrow2">
+	               	<?php if( $row_subseccion['estado']==1 ) : ?>
+	                	<div align="center"> <a href="javascript:changeState2('idseccion=<?=$row_subseccion['idseccion']; ?>&idpadre=<?=$row_subseccion['idpadre']; ?>&stUsuario=<?=$row_subseccion['estado']?>',<?=$row_subseccion['estado']?>,'seccion')"> <img src="../imagenes/accept.png" alt="Producto destacado" title="Producto destacado" width="14" height="14" border="0" /> </a> 
+	                	</div>
+	                <?php endif; ?>
+
+	                <?php if($row_subseccion['estado']==0) : ?>
+	                	<div align="center"> <a href="javascript:changeState2('idseccion=<?=$row_subseccion['idseccion'];?>&idpadre=<?=$row_subseccion['idpadre']; ?>&stUsuario=<?=$row_subseccion['estado']?>',<?=$row_subseccion['estado']?>,'seccion')"> <img src="../imagenes/no-accept.png" alt="Producto no destacado" title="Producto no destacado" width="16" height="16" border="0" /></a>
+	                	</div>
+	                <?php endif; ?>
+                </td> <!-- /.tdrow2 -->
+
+            	<td width="54" align="center" class="tdrow2"><a href="../subsecciones/index.php?idsubseccion=<?php echo $row_subseccion['idseccion']; ?>"><img src="../imagenes/ico_mapa.gif" width="19" height="15" border="0" alt="Subcategorias" title="Subcategorias" /></a>
+            	</td>
+
+               	<td width="51" align="center" class="tdrow2"><a href="editar.php?id=<?php echo $row_subseccion['idseccion']; ?>&idsubseccion=<?php echo $row_subseccion['idpadre'];?>"><img src="../imagenes/application_form_edit.png" width="16" height="16" border="0" /></a>
+               	</td>
+
+               <td width="42" align="center" class="tdrow2"><img src="../imagenes/application_form_delete.png" width="16" height="16" onclick="borrar('<?php echo $row_subseccion['idseccion']; ?>','<?php echo $row_subseccion['idpadre']; ?>')" style="cursor:pointer;" /
+               >
+               </td>
             </tr>
-            <?php
-		}
-		
-  ?>
+            <?php endforeach; ?>
          </table>
       </form>
    </div>

@@ -11,9 +11,10 @@
 	// Definimos la variable de conexion.
 	$cn = Conexion();
 	
-	$sql_editar  = "SELECT * FROM secciones WHERE idseccion = '".$_GET['id']."'";
-	$rpta_editar = query($sql_editar) or die(mysql_error());
-	$fila		 = fetch_array($rpta_editar);
+   $sql_editar  = "SELECT * FROM secciones WHERE idseccion = '".$_GET['id']."'";
+   $rpta_editar = query($sql_editar) or die(mysql_error());
+   $fila        = fetch_array($rpta_editar);
+   $fila        = $fila[0];
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -28,7 +29,7 @@
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="../css/estilos.css"/>
-<title>JBG Electric - Panel de administracion</title>
+<title> INOVALEC - Panel de administración </title>
 </head>
 
 <body>
@@ -51,6 +52,7 @@
          <table width="750" border="0" align="center" cellpadding="2" cellspacing="0">
             <tr>
                <td width="167" class="tdrow1">Nombre subcategoria</td>
+
                <td colspan="2"><input name="nombre_subseccion" type="text" class="formularios" id="nombre_subseccion" value="<?php echo $fila['seccion']; ?>" size="45"/></td>
             </tr>
             <tr>

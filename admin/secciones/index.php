@@ -10,7 +10,8 @@
 	// Definimos la variable de conexion.
 	$cn = Conexion();
 	
-	$padre = ($padre == null) ? 'IS NULL' : ' = ' . $padre;
+   //$padre = ($padre == null) ? 'IS NULL' : ' = ' . $padre;
+	$padre = !isset($padre) || is_null( $padre ) ? 'IS NULL' : ' = ' . $padre;
 	$sql_secciones  = "SELECT * FROM secciones WHERE idpadre ".$padre." ORDER BY seccion ASC";
 	$rpta_secciones = query($sql_secciones,$cn) or die(mysql_error()) ;
 
@@ -43,7 +44,7 @@
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="../css/estilos.css"/>
-<title>JBG Electric - Panel de administracion</title>
+<title> Inovalec - Panel de administración </title>
 </head>
 
 <body>
@@ -76,28 +77,37 @@
                   <td colspan="3" align="center" class="tdrow1">Operaciones</td>
                </tr>
                <?php
-  		while($row_secciones = fetch_array($rpta_secciones))
-		{
-  ?>
+                  $row_secciones = fetch_array($rpta_secciones);
+                  //var_dump( $row_secciones);
+                  foreach( $row_secciones as $row_seccion ) :
+               ?>
                <tr> 
                   <!--<td valign="top"><?php//echo $row_secciones['nombre_marca']; ?></td>-->
-                  <td valign="top" class="tdrow2"><?php echo $row_secciones['seccion']; ?></td>
-                  <td valign="top" class="tdrow2"><?php if($row_secciones['estado']==1){ ?>
-                     <div align="center"> <a href="javascript:changeState2('idseccion=<?=$row_secciones['idseccion']; ?>&amp;stUsuario=<?=$row_secciones['estado']?>',<?=$row_secciones['estado']?>,'seccion')"> <img src="../imagenes/accept.png" alt="Producto destacado" title="Producto destacado" width="14" height="14" border="0" /> </a> </div>
-                     <?php
-			}
-	    ?>
-                     <?php if($row_secciones['estado']==0){ ?>
-                     <div align="center"> <a href="javascript:changeState2('idseccion=<?=$row_secciones['idseccion']; ?>&amp;stUsuario=<?=$row_secciones['estado']?>',<?=$row_secciones['estado']?>,'seccion')"> <img src="../imagenes/no-accept.png" alt="Producto no destacado" title="Producto no destacado" width="16" height="16" border="0" /></a></div>
-                     <?php } ?></td>
-                  <td width="137" align="center" valign="top" class="tdrow2"><a href="../subsecciones/index.php?idsubseccion=<?php echo $row_secciones['idseccion']; ?>"><img src="../imagenes/ico_mapa.gif" alt="subcategorias" title="subcategorias" width="19" height="15" border="0" /></a></td>
-                  <td width="141" align="center" valign="top" class="tdrow2"><a href="editar.php?id=<?php echo $row_secciones['idseccion']; ?>"><img src="../imagenes/application_form_edit.png" width="16" height="16" border="0" /></a></td>
-                  <td width="139" align="center" valign="top" class="tdrow2"><img src="../imagenes/application_form_delete.png" width="16" height="16" onclick="borrar('<?php echo $row_secciones['idseccion']; ?>')" style="cursor:pointer;" /></td>
+                  <td valign="top" class="tdrow2"><?= $row_seccion['seccion']; ?></td>
+                  <td valign="top" class="tdrow2">
+
+                     <?php if($row_seccion['estado'] == 1 ) : ?>
+                     <div align="center"> 
+                        <a href="javascript:changeState2('idseccion=<?=$row_seccion['idseccion']; ?>&amp;stUsuario=<?=$row_seccion['estado']?>',<?=$row_seccion['estado']?>,'seccion')"> <img src="../imagenes/accept.png" alt="Producto destacado" title="Producto destacado" width="14" height="14" border="0" /> 
+                        </a> 
+                     </div>
+                     <?php endif; ?>
+
+                     <?php if($row_seccion['estado']==0) : ?>
+                     <div align="center"> 
+                        <a href="javascript:changeState2('idseccion=<?=$row_seccion['idseccion']; ?>&amp;stUsuario=<?=$row_seccion['estado']?>',<?=$row_seccion['estado']?>,'seccion')"> <img src="../imagenes/no-accept.png" alt="Producto no destacado" title="Producto no destacado" width="16" height="16" border="0" />
+                        </a>
+                     </div>
+                     <?php endif; ?>
+                  </td> <!-- /. -->
+
+                  <td width="137" align="center" valign="top" class="tdrow2"><a href="../subsecciones/index.php?idsubseccion=<?php echo $row_seccion['idseccion']; ?>"><img src="../imagenes/ico_mapa.gif" alt="subcategorias" title="subcategorias" width="19" height="15" border="0" /></a></td>
+
+                  <td width="141" align="center" valign="top" class="tdrow2"><a href="editar.php?id=<?php echo $row_seccion['idseccion']; ?>"><img src="../imagenes/application_form_edit.png" width="16" height="16" border="0" /></a></td>
+
+                  <td width="139" align="center" valign="top" class="tdrow2"><img src="../imagenes/application_form_delete.png" width="16" height="16" onclick="borrar('<?php echo $row_seccion['idseccion']; ?>')" style="cursor:pointer;" /></td>
                </tr>
-               <?php
-		}
-		
-  ?>
+               <?php endforeach; ?>
             </table>
          </form>
       </div>

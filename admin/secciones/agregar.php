@@ -24,7 +24,7 @@
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="../css/estilos.css"/>
-<title>JBG Electric - Panel de administracion</title>
+<title> INOVALEC - Panel de administración </title>
 </head>
 
 <body>
@@ -49,14 +49,14 @@
             <tr>
                <td colspan="3" class="tdrow1">
                   <?php
-                  		if(isset($_GET['msg']))
-						{
-							if($_GET['msg']=='1')
-							{
-								echo '<span align="center">Ya existe la categoria ingresada. Ingrese otra categoria.</span>';
-							}
-						}
-				  ?>                
+                  	if( isset($_GET['msg']) ) 
+                     {
+						      if($_GET['msg']=='1')
+							   { 
+                           echo '<span align="center">Ya existe la categoria ingresada. Ingrese otra categoria.</span>';
+						      }
+						   }
+				     ?>                
                </td>
             </tr>
             <tr>

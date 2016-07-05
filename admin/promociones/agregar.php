@@ -28,44 +28,49 @@
 	}	
 	
 </script>
-<title>JBG Electric - Panel de administracion</title>
+<title> INOVALEC - Panel de administración </title>
 </head>
 
 <body>
 <div id="contenedor">
 <div id="cuerpo_cpanel">
-   <div id="cabecera_titulo">
-      <p><?php echo "Bienvenido ".$_SESSION['admin_admin']; ?></p>
-      <div id="cabecera_salir"> <a href="../cerrar-sistema.php">Cerrar sesion</a></div>
-   </div>
-   <div id="cabecera_portada"> </div>
-   <div id="titulo_cpanel">
-      <p>Agregar Promoción</p>
-      <div id="regresar_cpanel"> <a href="../cpanel.php"> Regresar al Cpanel </a> </div>
-   </div>
-   <div id="contenido_cpanel">
-      <form action="procesar.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
-         <table width="860" border="0" align="center" cellpadding="2" cellspacing="2">
-            <tr>
-               <td class="tdrow1">Categoria</td>
-               <td colspan="2">
-				<select name="categoria" class="formularios" id="categoria" onchange="ver_subseccionEventos(this.value);">
-                     <option value="0">--Seleccione--</option>
-                     <?php
-					             	
-						$padre 			= ($padre == null) ? 'IS NULL' : ' = ' . $padre;
-						$sql_categoria  = "SELECT * FROM eventos WHERE idpadre ".$padre." ORDER BY categoria ASC";
-						$rpta_categoria = query($sql_categoria,$cn) or die(mysql_error());
-						
-						while($row_categoria = fetch_array($rpta_categoria))
-						{
-							echo "<option value='".$row_categoria['idcategoria']."'>".$row_categoria['categoria']."</option>";
-						}
-					
-					?>
-               </select>
-               </td>
-            </tr>
+
+  <div id="cabecera_titulo">
+    <p><?php echo "Bienvenido ".$_SESSION['admin_admin']; ?></p>
+    <div id="cabecera_salir"> <a href="../cerrar-sistema.php">Cerrar sesion</a></div>
+  </div>
+
+  <div id="cabecera_portada"> </div>
+
+  <div id="titulo_cpanel">
+    <p>Agregar Promoción</p>
+    <div id="regresar_cpanel"> <a href="../cpanel.php"> Regresar al Cpanel </a> </div>
+  </div>
+
+  <div id="contenido_cpanel">
+    <form action="procesar.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
+      <table width="860" border="0" align="center" cellpadding="2" cellspacing="2">
+        <tr>
+          <td class="tdrow1">Categoria</td>
+          <td colspan="2">
+				    <select name="categoria" class="formularios" id="categoria" onchange="ver_subseccionEventos(this.value);">
+
+              <option value="0">--Seleccione--</option>
+              <?php
+                $padre = !isset($padre) ? 'IS NULL' : ' = ' . $padre;
+						    $sql_categoria  = "SELECT * FROM eventos WHERE idpadre ".$padre." ORDER BY categoria ASC";
+						    $rpta_categoria = query($sql_categoria,$cn) or die(mysql_error());
+
+                /* Extraer categorías y hacer recorrido */
+                $row_categorias = fetch_array($rpta_categoria);
+                foreach( $row_categorias as $row_categoria ) :
+							    echo "<option value='".$row_categoria['idcategoria']."'>".$row_categoria['categoria']."</option>";
+						    endforeach;
+					    ?>
+            </select>
+          </td>
+        </tr>
+        
             <tr>
                <td class="tdrow1">Subcategoria</td>
                <td colspan="2">

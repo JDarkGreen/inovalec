@@ -13,7 +13,7 @@
 	
 	$sql_editar  = "SELECT * FROM secciones WHERE idseccion = '".$_GET['id']."'";
 	$rpta_editar = query($sql_editar,$cn) or die(mysql_error());
-	$row_seccion = fetch_array($rpta_editar);
+	$row_seccion = fetch_array($rpta_editar); //var_dump( $row_seccion );
 	
 
 ?>
@@ -29,7 +29,7 @@
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="../css/estilos.css"/>
-<title>JBG Electric - Panel de administracion</title>
+<title> INOVALEC - Panel de administración </title>
 </head>
 
 <body>
@@ -51,30 +51,19 @@
          <table width="750" border="0" align="center" cellpadding="2" cellspacing="0">
             <tr>
                <td width="154" class="tdrow1">Nombre categoria</td>
-               <td colspan="2"><input name="nombre_seccion" type="text" class="formularios" id="nombre_seccion" value="<?php echo $row_seccion['seccion']; ?>" size="30"/></td>
+               <td colspan="2"><input name="nombre_seccion" type="text" class="formularios" id="nombre_seccion" value="<?= $row_seccion[0]['seccion']; ?>" size="30"/></td>
             </tr>
             <tr>
-               <td class="tdrow1">Estado</td>
-               <td colspan="2"><input type="radio" name="estado" id="estado" value="1" 
-		<?php 
-        if($row_seccion['estado']=='1')
-        {
-        	echo "checked='checked'";
-        }
-		
-        ?>      
-      />
-                  Si
+                <td class="tdrow1">Estado</td>
+                <td colspan="2">
+
+                  <input type="radio" name="estado" id="estado" value="1" 
+                  <?= $row_seccion[0]['estado']=='1'? "checked='checked'" : ""; ?> /> Si
+
+                  <!-- No -->
                   <input type="radio" name="estado" id="estado" value="0" 
-		<?php 
-        if($row_seccion['estado']=='0')
-        {
-        	echo "checked='checked'";
-        }
-		
-        ?>    
-    />
-                  No </td>
+                  <?= $row_seccion[0]['estado']=='0'? "checked='checked'" : ""; ?> /> No
+                </td>
             </tr>
             <tr>
                <td class="tdrow1">&nbsp;</td>

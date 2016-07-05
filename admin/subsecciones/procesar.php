@@ -7,10 +7,10 @@
 	
 	$cn = Conexion();
 	
-	$idsubseccion		= $_POST['subseccion'];
-	$nombre_subseccion  = $_POST['nombre_subseccion'];
-	$url_subseccion     = url_amigable($nombre_subseccion);
-	$estado			    = $_POST['estado'];
+	$idsubseccion      = $_POST['subseccion'];
+	$nombre_subseccion = $_POST['nombre_subseccion'];
+	$url_subseccion    = url_amigable($nombre_subseccion);
+	$estado            = $_POST['estado'];
 	
 	$sql_subcategoria  = "SELECT * FROM secciones WHERE idpadre = '".$idsubseccion."' AND seccion = '".$nombre_subseccion."'";
 	$rpta_subcategoria = query($sql_subcategoria) or die(mysql_error());	
@@ -18,7 +18,7 @@
 	
 	if(!isset($_POST['editar']))
 	{
-		if($num_filas>0)
+		if( count($num_filas) >0 )
 		{
 			header("Location:agregar.php?msg=1&idsubseccion=$idsubseccion");
 		}
@@ -29,8 +29,7 @@
 		}
 	
 	}
-	
-	if(isset($_POST['editar']))
+	else
 	{
 		if($_POST['editar']=='1')
 		{
