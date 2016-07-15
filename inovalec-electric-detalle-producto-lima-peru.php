@@ -51,13 +51,17 @@
 
         <div class="row">
           <div class="col s12 m6">
+
             <!-- Titulo -->
-            <h2 class="sectionCommon__title-page text-uppercase align-left"><strong>Productos por Marcas</strong></h2>
+            <h2 class="sectionCommon__title-page text-uppercase align-left"><strong>
+            Productos por Marcas</strong>
+            </h2>
+
           </div><!-- /.col s12 m6 -->
           <div class="col s12 m6">
             <!-- Buscador -->
             <div id="form_buscar-1">
-              <form action="jbg-electric-resultados-busqueda-lima-peru.php" method="post" id="frmbuscar" name="frmbuscar">
+              <form action="inovalec-electric-resultados-busqueda-lima-peru.php" method="post" id="frmbuscar" name="frmbuscar">
                 <p>Buscar producto</p>
                 <p><input type="text" value="" class="borde_texto" id="buscar" name="buscar" /></p>
               </form><!-- /.form -->
@@ -68,10 +72,21 @@
         <!-- Solo muestra las marcas -->
         <div class="row">
       
-          <h2 class="sectionPage__productos__title--blue text-capitalize"><?= $nom_marca . "->" . $seccion . "->" . $subseccion1 . "->" . $subnivel ?></h2>
+          <h2 class="sectionPage__productos__title--blue text-capitalize">
+            <!-- Imprimir marca -->
+            <?= $nom_marca ?>
+            <!-- Imprimir seccion -->
+            <?= isset($seccion) && !empty($seccion) ? "->" . $seccion : ""; ?>
+            <!-- Imprimir subsección -->
+            <?= isset($subseccion1) && !empty($subseccion1) ? "->" . $subseccion1 : ""; ?>
+            <!-- Imprimir subnivel -->
+            <?= isset($subnivel) && !empty($subnivel) ? "->" . $subnivel : ""; ?>
+          </h2>
           
           <!-- SECCION PRODUCTOS -->
           <section id="productos" class="">
+
+            <?php /*
             <div class="col s12 m4">
               <aside id="sidebarMenu">
                 <!-- MENUS -->
@@ -117,17 +132,30 @@
 
               </aside><!-- /.sidebarMenu -->
             </div><!-- /.col s12 m4 -->
-            <div class="col s12 m8">
+            */ ?>
+
+
+            <div class="col s12 m12">
               <!-- Descripcion productos -->
               <section class="sectionPage__productos__description">
                 <!-- Breadcums -->
                 <?php  
                   $nombre_marca       = ucwords( strtolower($nom_marca) );
                   $nombre_seccion     = ucwords( strtolower($seccion) );
-                  $nombre_subseccion = ucwords( strtolower($subseccion) );
+                  $nombre_subseccion  = ucwords( strtolower($subseccion) );
                   $nombre_subnivel    = ucwords( strtolower($subnivel) );
                 ?>
-                <div class="breadcums"><?= $nombre_marca . " -> " . $nombre_seccion . " -> " . $nombre_subseccion . " -> " . $nombre_subnivel ?></div><!-- /breadcums -->
+                <div class="breadcums">
+                  <!-- Imprimir marca -->
+                  <?= $nombre_marca ?>
+                  <!-- Imprimir seccion -->
+                  <?= isset($nombre_seccion) && !empty($nombre_seccion) ? "->" . $nombre_seccion : ""; ?>
+                  <!-- Imprimir subsección -->
+                  <?= isset($nombre_subseccion) && !empty($nombre_subseccion) ? "->" . $nombre_subseccion : ""; ?>
+                  <!-- Imprimir subnivel -->
+                  <?= isset($nombre_subnivel) && !empty($nombre_subnivel) ? "->" . $nombre_subnivel : ""; ?>                  
+                </div><!-- /breadcums -->
+
                 <!-- titulo -->
                 <h3 class="sectionPage__productos__description__title"><?= $row_detalle_producto[0]['nombre_producto'] ?></h3>
                 <!-- secciones de informacion -->

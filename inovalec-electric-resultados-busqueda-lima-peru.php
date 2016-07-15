@@ -5,7 +5,7 @@
   $active = 3;
 
   //setear el título
-  $title = "JBG ELECTRIC | Resultados de busqueda para equipos electricos peru,  repuestos electricos,  productos por linea, materiales instalaciones electricas industrial, automatizacion industrial, conductores electricos, equipo de media tension control y proteccion, equipos de seguridad y maniobra, ferreteria de electrificacion, iluminacion peru, instrumentos de medicion, linea conduit, materiales aislantes, materiales para instalaciones residenciales, pararrayos, sistema puesta tierra y afines, seguridad industrial lima peru, repuestos electricos lima peru, material construccion electricos,  productos por marcas 3m, lima abb abro aibar, bremas  celsa cirmarker lima, coel crc elcope lima, exosolda general electric indeco peru, kss legrand leviton peru, loctite lumnia mennekes peru, schneider electric siemens peru, talma ide termoweld lima, solera jsl santos peru dexson tecnoflex ls repuestos peru, tecnofil bticino orbis metal&a opalux hurricane lima peru";
+  $title = "INOVALEC S.A.C | Detalle del producto para equipos electricos Peru,  repuestos electricos,  productos por linea, materiales instalaciones electricas industrial, automatizacion industrial, conductores electricos, equipo de media tension control y proteccion, equipos de seguridad y maniobra, ferreteria de electrificacion, iluminacion peru, instrumentos de medicion, linea conduit, materiales aislantes, materiales para instalaciones residenciales, pararrayos, sistema puesta tierra y afines, seguridad industrial lima peru, repuestos electricos lima peru, material construccion electricos,  productos por marcas 3m, lima abb abro aibar, bremas  celsa cirmarker lima, coel crc elcope lima, exosolda general electric indeco peru, kss legrand leviton peru, loctite lumnia mennekes peru, schneider electric siemens peru, talma ide termoweld lima, solera jsl santos peru dexson tecnoflex ls repuestos peru, tecnofil bticino orbis metal&a opalux hurricane lima peru";
 
   //incluir plantilla header
   include('includes/main-header.php');
@@ -52,23 +52,13 @@
       
           <!-- SECCION PRODUCTOS -->
           <section id="productos" class="">
-            <?php #resultadosBusqueda($buscar); ?>
+            <?php resultadosBusqueda($buscar); ?>
           </section> <!-- /.sectionPage__producto__content-marcas -->
 
           <div class="clearfix"></div> <!-- /clearfix -->
 
           <!-- Seccion incluir marcas -->
-          <section class="sectionMarcas">
-              <div id="owl-carousel-marcas" class="">
-                <div class="item"><img src="images/carousel-marcas/marca-3m-jbg.jpg" alt="" class="responsive-img" /></div>
-                <div class="item"><img src="images/carousel-marcas/marca-abb-jbg.jpg" alt="" class="responsive-img" /></div>
-                <div class="item"><img src="images/carousel-marcas/marca-abro-jbg.jpg" alt="" class="responsive-img" /></div>
-                <div class="item"><img src="images/carousel-marcas/marca-aibar-jbg.jpg" alt="" class="responsive-img" /></div>
-                <div class="item"><img src="images/carousel-marcas/marca-amp-jbg.jpg" alt="" class="responsive-img" /></div>
-                <div class="item"><img src="images/carousel-marcas/marca-bahaco-jbg.jpg" alt="" class="responsive-img" /></div>
-                <div class="item"><img src="images/carousel-marcas/marca-bticino-jbg.jpg" alt="" class="responsive-img" /></div>
-              </div><!-- /.owl-carousel -->
-          </section><!-- /sectionMarcas -->
+          <?php include("includes/section-marcas.php") ?>
 
         </div><!-- /.row -->
       </div><!-- /.container -->

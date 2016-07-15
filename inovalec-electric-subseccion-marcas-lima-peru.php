@@ -67,7 +67,17 @@
         <!-- Solo muestra las marcas -->
         <div class="row">
       
-          <h2 class="text-capitalize"><strong><?= $nom_marca . "->" . $row_submarca[0]['seccion'] . "->" . $subseccion ?></strong></h2>
+          <h2 class="sectionPage__productos__title--blue text-capitalize">
+            <strong>
+              <a href="marca-inovalec-electric-lima-peru.php?marca=<?= $idmarca ?>&nom_marca=<?= $nom_marca ?>#marca"><?= $nom_marca  ?> -> </a>
+
+              <a href="inovalec-electric-seccion-marcas-lima-peru.php?idseccion=<?= $idseccion ?>&idmarca=<?= $idmarca ?>&nom_marca=<?= $nom_marca ?>#marca">
+                <?= $row_submarca[0]['seccion'] ?>
+              </a> ->
+
+              <?= $subseccion ?>
+            </strong>
+          </h2>
           
           <!-- Contenedor de marcas -->
           <section class="sectionPage__producto__content-marcas">

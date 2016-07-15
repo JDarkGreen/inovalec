@@ -17,7 +17,7 @@
 	define("SERVIDOR","localhost");
 	define("USUARIO","root");
 	define("CLAVE","");
-	define("BASE_DATOS","inovalec");
+	define("BASE_DATOS","inovales");
 	
 	// ruta absoluta del servidor.
 	

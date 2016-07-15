@@ -1,5 +1,5 @@
+<?php  /** Incluir Constantes **/ include("../../includes/constants.php"); ?>
 <?php
-	
 	session_start();
 	include("../../includes/conexion.php");
 	include("../control.php");	
@@ -11,7 +11,7 @@
 	$cn = Conexion();	
 	
 	$sql_marcas  = "SELECT * FROM marcas ORDER BY nombre_marca ASC";
-	$rpta_marcas = query($sql_marcas,$cn) or die(mysql_error());
+	$rpta_marcas = query($sql_marcas) or die(mysql_error());
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -31,7 +31,7 @@
 	}
 	
 </script>
-<title> INOVALEC - Panel de administración </title>
+<title> <?= SITE_NAME; ?> - Panel de administración </title>
 </head>
 
 <body>
@@ -75,20 +75,15 @@
             </tr>
             <?php 
                $row_marcas = fetch_array($rpta_marcas);
-               foreach( $row_marcas )
-
-               while()
-			{
-				
-	  ?>
+               if ( !empty( $row_marcas ) ) : 
+               foreach( $row_marcas as $row_marca ) : 
+            ?>
             <tr>
-               <td class="tdrow2"><?php echo $row_marca['nombre_marca']; ?></td>
+               <td class="tdrow2"><?= $row_marca['nombre_marca']; ?></td>
                <td class="tdrow2"><a href="editar.php?idmarca=<?php echo $row_marca['idmarca']; ?>"><img src="../imagenes/application_form_edit.png" width="16" height="16" border="0" /></a></td>
-               <td class="tdrow2"><img src="../imagenes/application_form_delete.png" width="16" height="16" onclick="borrar('<?php echo $row_marca['idmarca']; ?>');" style="cursor:pointer;" /></td>
-            </tr>
-            <?php
-			}
-	  ?>
+               <td class="tdrow2"><img src="../imagenes/application_form_delete.png" width="16" height="16" onclick="borrar('<?= $row_marca['idmarca']; ?>');" style="cursor:pointer;" /></td>
+            </tr>         
+            <?php endforeach; endif; ?>
          </table>
       </form>
    </div>

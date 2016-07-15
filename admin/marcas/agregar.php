@@ -1,3 +1,5 @@
+<?php  /** Incluir Constantes **/ include("../../includes/constants.php"); ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -10,14 +12,14 @@
 		document.form1.submit();
 	}
 </script>
-<title>JBG Electric - Panel de administracion</title>
+<title> <?= SITE_NAME; ?> - Panel de administracion</title>
 </head>
 
 <body>
 <div id="contenedor">
 <div id="cuerpo_cpanel">
    <div id="cabecera_titulo">
-      <p><?php echo "Bienvenido ".$_SESSION['admin_admin']; ?></p>
+      <p><?= "Bienvenido "; ?></p>
       <div id="cabecera_salir"> <a href="../cerrar-sistema.php">Cerrar sesion</a></div>
    </div>
    <div id="cabecera_portada"> </div>

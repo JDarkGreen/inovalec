@@ -1,31 +1,31 @@
-/**********************************************/
-/* @name: style.css                           */
-/* @date: 19/11/07                            */
-/* @desc: JMyCarousel css                     */
-/* @auth: kevin@enova-tech.net                */
-/**********************************************/
-/** General Elements && arrows description  ***/
-
-
-div.jMyCarousel{
-	margin-top: 10px;
-}
-
-div.jMyCarousel ul{
-}
-
-div.jMyCarousel ul li{
-	margin:0px;
-/*	border:1px solid #ccc;*/
-	line-height:0px;
-	padding:0px;
-}
-
-div.jMyCarousel ul li a{ /* in case of link */
-	display:block;
-}
-
-div.jMyCarousel ul li img{
-	display:block;
-	border:0px;
-}
+/**********************************************/
+/* @name: style.css                           */
+/* @date: 19/11/07                            */
+/* @desc: JMyCarousel css                     */
+/* @auth: kevin@enova-tech.net                */
+/**********************************************/
+/** General Elements && arrows description  ***/
+
+
+div.jMyCarousel{
+	margin-top: 10px;
+}
+
+div.jMyCarousel ul{
+}
+
+div.jMyCarousel ul li{
+	margin:0px;
+/*	border:1px solid #ccc;*/
+	line-height:0px;
+	padding:0px;
+}
+
+div.jMyCarousel ul li a{ /* in case of link */
+	display:block;
+}
+
+div.jMyCarousel ul li img{
+	display:block;
+	border:0px;
+}

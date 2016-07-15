@@ -23,7 +23,7 @@
 
   // llamo a la funcion productos para mostrar la lista de los items registrados.
   $resultado = productos($subseccion);
-  
+
   $sql_submarcas  = "SELECT p.*, s.*, m.*, s.seccion as subseccion FROM productos p, secciones s, marcas m
             WHERE p.idseccion = s.idseccion
             AND p.idmarca = m.idmarca
@@ -32,6 +32,12 @@
   $rpta_submarcas = query($sql_submarcas) or die(mysql_error());
   $row_submarca   = fetch_array($rpta_submarcas); 
 
+  //Nivel
+  $rpta_seccion_marcas = seccion_marcas($idseccion,$idmarca);
+  $fila_nivel          = fetch_array($rpta_seccion_marcas);
+  $nivel               = $fila_nivel[0];
+
+  #var_dump($nivel);
 ?>
 
 <!-- Incluir Banner de Pagina -->
@@ -59,7 +65,7 @@
           <div class="col s12 m6">
             <!-- Buscador -->
             <div id="form_buscar-1">
-              <form action="jbg-electric-resultados-busqueda-lima-peru.php" method="post" id="frmbuscar" name="frmbuscar">
+              <form action="inovalec-electric-resultados-busqueda-lima-peru.php" method="post" id="frmbuscar" name="frmbuscar">
                 <p>Buscar producto</p>
                 <p><input type="text" value="" class="borde_texto" id="buscar" name="buscar" /></p>
               </form><!-- /.form -->
@@ -70,56 +76,19 @@
         <!-- Solo muestra las marcas -->
         <div class="row">
       
-          <h2 class="sectionPage__productos__title--blue text-capitalize"><?= $nom_marca . "->" . $seccion . "->" . $subseccion1 . "->" . $subnivel ?></h2>
+          <h2 class="sectionPage__productos__title--blue text-capitalize">
+            <a href="marca-inovalec-electric-lima-peru.php?marca=<?= $idmarca ?>&nom_marca=<?= $nom_marca ?>#marca"> <?= $nom_marca ?></a> ->
+
+            <a href="inovalec-electric-seccion-marcas-lima-peru.php?idseccion=<?= $idseccion ?>&idmarca=<?= $idmarca ?>&nom_marca=<?= $nom_marca ?>#marca"><?= $seccion ?></a> ->
+
+            <a href="inovalec-electric-subseccion-marcas-lima-peru.php?idseccion=<?= $idseccion ?>&idsubseccion=<?= $nivel['niveles'] ?>&idmarca=<?= $idmarca ?>&nom_marca=<?= $nom_marca ?>&seccion=<?= $seccion ?>&subseccion=<?= $subseccion1 ?>"><?= $subseccion1 ?></a> ->
+
+            <?= $subnivel ?>
+          </h2>
           
           <!-- SECCION PRODUCTOS -->
           <section id="productos" class="">
-            <div class="col s12 m4">
-              <aside id="sidebarMenu">
-                <!-- MENUS -->
-                <div id="sidebarSwitcherContainer" class="sidebarMenu__title center">
-                  <input type="button" data-link="js-menu-lineas" class="sidebarSwitcher sidebarMarcasBtn " value="LÍNEAS" title="lineas"/>
-                  <input type="button" data-link="js-menu-marcas" class="sidebarSwitcher sidebarLineasBtn sidebarSwitcherOff" value="MARCAS" title="marcas"/>
-                </div><!-- /.sidebarSwitcherContainer -->
-
-                <!-- LISTA por lineas-->
-                <section id="js-menu-lineas" class="sidebarMenu">
-                  <?php
-                    $padre = !isset($padre) && empty($padre) ? "IS NULL" : " " . $padre;
-                    $sql_lineas  = "SELECT * FROM secciones WHERE idpadre ".$padre." ORDER BY seccion ASC";
-                    $rpta_lineas = query($sql_lineas);
-                    $row_lineas  = fetch_array($rpta_lineas);
-                  ?>
-                  <ul>
-                  <?php foreach( $row_lineas as $lineas ) : ?>
-                    <li>
-                      <a href="lista-lineas-subseccion.php?nom_marca=<?= $lineas['seccion'] ?>&subseccion=<?= $lineas['idseccion'] ?>" title="<?= $lineas['seccion']; ?>">
-                        <?= ucwords( strtolower( recortar_texto($lineas['seccion']) ) ); ?>
-                      </a>
-                    </li>
-                  <?php endforeach; ?>
-                  </ul>
-                </section><!-- /.id="sidebarScrollable1" class="sidebarMenu" -->
-
-                <!-- LISTA por marca -->
-                <section id="js-menu-marcas" class="sidebarMenu hide">
-                  <?php 
-                    $sql_marcas  = "SELECT * FROM marcas ORDER BY idmarca ASC";
-                    $rpta_marcas = query($sql_marcas) or die(mysql_error()); 
-                    $row_marcas  = fetch_array($rpta_marcas);
-                  ?>
-                  <ul>
-                    <?php foreach( $row_marcas as $marca ) : ?>
-                      <li>
-                        <a href="marcas-inovalec-electric-lima-peru.php?marca=<?= $marca['idmarca']; ?>&nom_marca=<?= $marca['nombre_marca']; ?>" title="<?= $marca['nombre_marca']; ?>"><?= ucfirst( strtoupper($marca['nombre_marca']) ); ?></a>
-                      </li>
-                    <?php endforeach; ?>
-                  </ul>
-                </section><!-- /.sidebarMenu hidden -->
-
-              </aside><!-- /.sidebarMenu -->
-            </div><!-- /.col s12 m4 -->
-            <div class="col s12 m8">
+            <div class="col s12">
               <!-- Tabla de productos -->
               <table width="" border="0" cellpadding="0" cellspacing="0" align="">
                 <tr class="titulos">

@@ -1,5 +1,5 @@
+<?php  /** Incluir Constantes **/ include("../includes/constants.php"); ?>
 <?php
-
 	session_start();
 	include("control.php");
 	
@@ -12,7 +12,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="css/estilos.css"/>
-<title>INOVALEC - Panel de administracion</title>
+<title> <?= SITE_NAME; ?> - Panel de administracion</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
       </div>
       <div id="cabecera_portada"> </div>
       <div id="titulo_cpanel">
-         <p>Administracion JBG Electric</p>
+         <p> Administración - <?= SITE_NAME; ?> </p>
       </div>
       <div id="contenido_cpanel">
          <table width="851" border="0" cellpadding="0" cellspacing="0">
@@ -36,9 +36,9 @@
             <tr>
                <td align="center"><a href="secciones/index.php"><img src="imagenes/categorias.png" width="120" height="131" border="0" /></a></td>
                <td align="center"><a href="productos/index.php"><img src="imagenes/productos.png" width="123" height="134" border="0" /></a></td>
-              <!--               <td width="142" align="center"><a href="eventos/index.php"><img src="imagenes/eventos.png" width="128" height="123" border="0" /></a></td>-->
+              <!-- <td width="142" align="center"><a href="eventos/index.php"><img src="imagenes/eventos.png" width="128" height="123" border="0" /></a></td>-->
                <td width="165" align="center"><a href="promociones/index.php"><img src="imagenes/promociones.png" width="128" height="128" border="0" /></a></td>
-               <td width="162" align="center"><a href="contenido_eventos/index.php"><img src="imagenes/noticias.png" width="128" height="128" border="0" /></a></td>
+               <!--td width="162" align="center"><a href="contenido_eventos/index.php"><img src="imagenes/noticias.png" width="128" height="128" border="0" /></a></td-->
                <td width="169" align="center"><a href="marcas/index.php"><img src="imagenes/marcas.png" width="128" height="128" border="0" /></a></td>
             </tr>
          </table>

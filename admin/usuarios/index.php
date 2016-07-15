@@ -1,5 +1,6 @@
 <?php
-	
+	/** Incluir Constantes **/ include("../../includes/constants.php"); 
+
 	session_start();
 	include("../../includes/conexion.php");
 	include("../control.php");	
@@ -31,7 +32,7 @@
 	}
 	
 </script>
-<title>JBG Electric - Panel de administracion</title>
+<title> <?= SITE_NAME; ?> - Panel de administracion </title>
 </head>
 
 <body>
@@ -66,18 +67,15 @@
                <td width="83" class="tdrow1">Eliminar</td>
             </tr>
             <?php
-      		while($row_usuario = fetch_array($rpta_usuarios))
-			{
-				
-	  ?>
+               $rows_usuario = fetch_array($rpta_usuarios);
+               foreach( $rows_usuario as $row_usuario ) :	
+	        ?>
             <tr>
                <td class="tdrow2"><?php echo $row_usuario['usuario']; ?></td>
                <td align="center" class="tdrow2"><a href="editar.php?idadmin=<?php echo $row_usuario['idadmin']; ?>"><img src="../imagenes/application_form_edit.png" width="16" height="16" border="0" /></a></td>
                <td align="center" class="tdrow2"><img src="../imagenes/application_form_delete.png" width="16" height="16" onclick="borrar('<?php echo $row_usuario['idadmin']; ?>');" style="cursor:pointer;" /></td>
             </tr>
-            <?php
-			}
-	  ?>
+            <?php endforeach; ?>
          </table>
       </form>
    </div>

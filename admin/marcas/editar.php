@@ -1,5 +1,5 @@
+<?php  /** Incluir Constantes **/ include("../../includes/constants.php"); ?>
 <?php
-	
 	session_start();
 	include("../../includes/conexion.php");
 	include("../../includes/funciones.php");
@@ -10,9 +10,10 @@
 	
 	$cn = Conexion();
 	
-	$sql_editar  = "SELECT * FROM marcas WHERE idmarca = '".$_GET['idmarca']."'";
-	$rpta_editar = query($sql_editar) or die(mysql_error());
-	$fila		 = fetch_array($rpta_editar);
+   $sql_editar  = "SELECT * FROM marcas WHERE idmarca = '".$_GET['idmarca']."'";
+   $rpta_editar = query($sql_editar) or die(mysql_error());
+   $fila        = fetch_array($rpta_editar);
+   $fila        = $fila[0];
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -27,7 +28,7 @@
 		document.form1.submit();
 	}
 </script>
-<title>JBG Electric - Panel de administracion</title>
+<title> <?= SITE_NAME; ?> - Panel de administracion</title>
 </head>
 
 <body>

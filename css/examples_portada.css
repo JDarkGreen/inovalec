@@ -1,79 +1,79 @@
-.image_carousel_portada {
-    float: left;
-    height: auto;
-	margin-left: 1px;
-	padding-bottom:5px;
-    position: relative; 
-	left:0;
-	right:0;
-    width: 815px;
-}
-
-.image_carousel_portada .caroufredsel_wrapper a {
-	display: block;
-/*	float: left; */
-}
-.image_carousel_portada img {
-	background-color: white;
-	vertical-align:middle;
-}
-
-.transparent p.view_scripts {
-	margin: 0;
-	padding: 10px 0 10px 25px;
-	position: relative;
-}
-.transparent p.view_scripts a {
-	text-decoration: none;
-	color: #999;
-	font-weight: bold;
-	padding-left: 20px;
-}
-.transparent p.view_scripts a:hover, .transparent p.view_scripts a.selected {
-	color: #333;
-}
-a.prev_portada, a.next_portada, a.play, a.pause {
-	background: url(../images/miscellaneous_sprite-portada.png) 0 0 no-repeat transparent;
-	width: 45px;
-	height: 47px;
-	display: block;
-	position: absolute;
-}
-
-a.prev_portada, a.next_portada {
-	top: 33px;
-}
-.list_carousel a.prev_portada, .list_carousel a.next_portada {
-	top: 30px;
-}
-a.play, a.pause {
-	top: 185px;
-	left: 50%;
-	margin-left: -22px;
-	z-index: 200;
-}
-a.next_portada {
-/*	right: -22px;*/
-	right:-41px;
-}
-a.prev_portada {
-/*	left: -22px;*/
-	left:-40px;
-}
-a.prev_portada:hover {			background-position: 0 -60px; }
-a.prev_portada.disabled {		background-position: 0 -65px !important; cursor: default; }
-a.next_portada {				background-position: -50px -5px; }
-a.next_portada:hover {			background-position: -50px -60px; }
-a.next_portada.disabled {		background-position: -50px -64px !important; cursor: default; }
-a.play {				background-position: -150px 0; }
-a.play:hover {			background-position: -150px -50px; }
-a.play.disabled {		background-position: -150px -100px !important; cursor: default; }
-a.play.paused {			background-position: -100px 0; }
-a.play.paused:hover {	background-position: -100px -50px; }
-a.pause {				background-position: -150px 0; }
-a.pause:hover {			background-position: -150px -50px; }
-a.pause.disabled {		background-position: -150px -100px !important; cursor: default; }
-
-a.prev_portada span, a.next_portada span, a.play span, a.pause span {
-	display: none;
+.image_carousel_portada {
+    float: left;
+    height: auto;
+	margin-left: 1px;
+	padding-bottom:5px;
+    position: relative; 
+	left:0;
+	right:0;
+    width: 815px;
+}
+
+.image_carousel_portada .caroufredsel_wrapper a {
+	display: block;
+/*	float: left; */
+}
+.image_carousel_portada img {
+	background-color: white;
+	vertical-align:middle;
+}
+
+.transparent p.view_scripts {
+	margin: 0;
+	padding: 10px 0 10px 25px;
+	position: relative;
+}
+.transparent p.view_scripts a {
+	text-decoration: none;
+	color: #999;
+	font-weight: bold;
+	padding-left: 20px;
+}
+.transparent p.view_scripts a:hover, .transparent p.view_scripts a.selected {
+	color: #333;
+}
+a.prev_portada, a.next_portada, a.play, a.pause {
+	background: url(../images/miscellaneous_sprite-portada.png) 0 0 no-repeat transparent;
+	width: 45px;
+	height: 47px;
+	display: block;
+	position: absolute;
+}
+
+a.prev_portada, a.next_portada {
+	top: 33px;
+}
+.list_carousel a.prev_portada, .list_carousel a.next_portada {
+	top: 30px;
+}
+a.play, a.pause {
+	top: 185px;
+	left: 50%;
+	margin-left: -22px;
+	z-index: 200;
+}
+a.next_portada {
+/*	right: -22px;*/
+	right:-41px;
+}
+a.prev_portada {
+/*	left: -22px;*/
+	left:-40px;
+}
+a.prev_portada:hover {			background-position: 0 -60px; }
+a.prev_portada.disabled {		background-position: 0 -65px !important; cursor: default; }
+a.next_portada {				background-position: -50px -5px; }
+a.next_portada:hover {			background-position: -50px -60px; }
+a.next_portada.disabled {		background-position: -50px -64px !important; cursor: default; }
+a.play {				background-position: -150px 0; }
+a.play:hover {			background-position: -150px -50px; }
+a.play.disabled {		background-position: -150px -100px !important; cursor: default; }
+a.play.paused {			background-position: -100px 0; }
+a.play.paused:hover {	background-position: -100px -50px; }
+a.pause {				background-position: -150px 0; }
+a.pause:hover {			background-position: -150px -50px; }
+a.pause.disabled {		background-position: -150px -100px !important; cursor: default; }
+
+a.prev_portada span, a.next_portada span, a.play span, a.pause span {
+	display: none;
 }

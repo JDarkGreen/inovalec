@@ -11,6 +11,8 @@ $color_orange_btn   : #f9a004
 $color_sky          : #00C2F5
 $color_sky_text     : #D7FFFF
 
+$color_blue         : #003579
+
 $color_bg_gray      : #9A9A9A
 $color_bg_gray_claro: #F2F2F2
 $color_gray_claro   : #C0C0C0
@@ -432,6 +434,9 @@ textarea.materialize-textarea:focus:not([readonly])
 	color      : $color_dark_blue
 	font-weight: 700
 	margin     : 0 auto 15px
+	//link 
+	a 
+		color: $color_blue
 
 //Buscador
 #form_buscar-1 
@@ -564,11 +569,12 @@ textarea.materialize-textarea:focus:not([readonly])
 	td
 		border: 1px solid $color_bg_gray
 		&.bg-icon
-			background     : url(../images/item-detalle-producto-jbg-electric-lima-peru.png) no-repeat left top
-			background-size: 100%
-			color          : white 
-			padding        : 0 0 0 40px
-			width          : 45%
+			background         : url(../images/item-detalle-producto-jbg-electric-lima-peru.png) no-repeat left top
+			background-position: 45% center
+			background-size    : 100%
+			color              : white 
+			padding            : 0 0 0 60px
+			width              : 45%
 
 //selectores opcion
 .tabSelector

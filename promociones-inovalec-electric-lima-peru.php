@@ -47,7 +47,7 @@ include("includes/page/banner.php");
                 <!-- Span Contenedor  -->
                 <span class="bg_container__btn text-center">
                   <!-- Boton cotizar -->
-                  <a href="" class="btn__cotizar">Cotizar</a>
+                  <a href="venta-en-linea-inovalec-electric-lima-peru.php" class="btn__cotizar">Cotizar</a>
                 </span><!-- /. bg_container__btn-->
               </div> <!-- /.item-promocion -->
             </article><!-- /article -->

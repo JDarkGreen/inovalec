@@ -81,15 +81,15 @@
 	function productos($subnivel)
 	{
 		# marca del producto.
-		if($_GET['idmarca']!="")
+		if( isset($_GET['idmarca']) && !empty($_GET['idmarca']) )
 		{
 			$condicion .= "AND p.idmarca = '".$_GET['idmarca']."'";
 		}
 		
 		# marca del producto.
-		if($_GET['idsubnivel']!="")
+		if( isset($_GET['idsubnivel']) && !empty($_GET['idsubnivel']) )
 		{
-			$condicion .= "AND p.subniveles = '".$_GET['idsubnivel']."'";
+			$condicion = "AND p.subniveles = '".$_GET['idsubnivel']."'";
 		}			
 		
 		$sql_productos  = "SELECT p.*, s.*, m.* FROM productos p, secciones s, marcas m
@@ -169,32 +169,38 @@
 
 	function resultadosBusqueda($buscar)
 	{
-		if( !empty($buscar) )
+		if( isset($_GET['buscar']) )
 		{
+			$buscar     = $_GET['buscar'];
 			$a 			= "&buscar=$buscar";
-			$condicion .= "AGAINST( '$buscar' IN BOOLEAN MODE )";
+			$condicion  = "AGAINST( '$buscar' IN BOOLEAN MODE )";
+		}else{
+			$a 			= "&buscar=$buscar";
+			$condicion  = "AGAINST( '$buscar' IN BOOLEAN MODE )";
 		}
 
+		//SETEAMOS VARIABLES
+		$resto = 0;
+
 		$registros = 15;
-		$pagina    = $_GET['pagina'];
+		$pagina    = isset($_GET['pagina']) && !empty($_GET['pagina']) ? $_GET['pagina'] : "";
 		
-		if (!$pagina) { 
+		if ( empty($pagina) ) { 
 			$inicio = 0; 
 			$pagina = 1; 
 		}else{ 
-			$inicio = ($pagina - 1) * $registros; 
+			$inicio = ( $pagina - 1) * $registros; 
 		}
 		
-		
 		# Primera consulta.
-		$sql_buscar  = "SELECT p.idproducto, p.nombre_producto, p.codigo_prod, p.niveles, p.subniveles, p.imagen, m.nombre_marca, 
+		$sql_buscar  = "SELECT p.idmarca , p.idproducto, p.nombre_producto, p.codigo_prod, p.niveles, p.subniveles, p.imagen, m.nombre_marca, 
 						s.seccion FROM productos p
 						INNER JOIN marcas m ON m.idmarca = p.idmarca
 						INNER JOIN secciones s ON s.idseccion = p.idseccion 
 						WHERE p.nombre_producto LIKE '%$buscar%' OR m.nombre_marca LIKE '%$buscar%'";	
-		$rpta_buscar = query($sql_buscar,$cn) or die(mysql_error());
+
+		$rpta_buscar     = query($sql_buscar);
 		$total_registros = num_rows($rpta_buscar);
-		
 		
 		# Segunda consulta.
 		if ($buscar<>'')
@@ -205,18 +211,18 @@
 		  if ($numero==1) 
 		  {
 		   //SI SOLO HAY UNA PALABRA DE BUSQUEDA SE ESTABLECE UNA INSTRUCION CON LIKE
-		  $cadbusca="SELECT p.idproducto, p.nombre_producto, p.codigo_prod, p.niveles, p.subniveles, p.imagen, m.nombre_marca, 
+		  $cadbusca="SELECT p.idmarca , p.idproducto, p.nombre_producto, p.codigo_prod, p.niveles, p.subniveles, p.imagen, m.nombre_marca, 
 					  s.seccion FROM productos p
 					  INNER JOIN marcas m ON m.idmarca = p.idmarca
 					  INNER JOIN secciones s ON s.idseccion = p.idseccion 
 		   			  WHERE p.nombre_producto LIKE '%$buscar%' OR m.nombre_marca LIKE '%$buscar%'
 					  LIMIT $inicio, $registros";
 		  } 
-		  elseif ($numero>1) 
+		  elseif ($numero > 1 ) 
 		  {
 		  //SI HAY UNA FRASE SE UTILIZA EL ALGORTIMO DE BUSQUEDA AVANZADO DE MATCH AGAINST
 		  //busqueda de frases con mas de una palabra y un algoritmo especializado
-		  $cadbusca = "SELECT p.idproducto, p.nombre_producto, p.codigo_prod, p.niveles, p.subniveles, p.imagen, m.nombre_marca, 
+		  $cadbusca = "SELECT p.idmarca , p.idproducto, p.nombre_producto, p.codigo_prod, p.niveles, p.subniveles, p.imagen, m.nombre_marca, 
 					   s.seccion FROM productos p
 					   INNER JOIN marcas m ON m.idmarca = p.idmarca
 					   INNER JOIN secciones s ON s.idseccion = p.idseccion
@@ -225,32 +231,44 @@
 					   (
 						p.nombre_producto, m.nombre_marca
 					   )
-					   ".$condicion."
-					   LIMIT $inicio, $registros";
+					   ".$condicion."LIMIT $inicio, $registros";
 		  }
 		  
 		}
 				
 		$rpta_buscarProductos = query($cadbusca) or die(mysql_error());		
-		$total_paginas    = ceil($total_registros / $registros);
+		$total_paginas        = ceil($total_registros / $registros);
 		
 		echo "<table align='left' border = '0'>";
 		
 		$columnes = 3; # Número de columnas (variable)
-		
-		for ($i=1; $row = fetch_array($rpta_buscarProductos); $i++) 
+
+		//OBTENER TODOS LOS RESULTADOS EN UN ARRAY 
+		$array_products_found = fetch_array($rpta_buscarProductos);
+
+		#var_dump($array_products_found);exit;
+
+		for ( $i = 1 ; $i <= count($array_products_found) ; $i++) 
 		{	
 		
+			//OBTENER DATOS DE CADA PRODUCTO Y SETEARLO EN LA VARIABLE ROW
+			$row = array();
+			$row = $array_products_found[ $i - 1 ];
+
 			// subseccion.
 			$sql_dato1  = "SELECT s.seccion as subseccion FROM secciones s WHERE s.idseccion='".$row['niveles']."'";
+
 			$rpta_dato1 = query($sql_dato1) or die(mysql_error());
 			$fila_dato1 = fetch_array($rpta_dato1);
+			$fila_dato1 = $fila_dato1[0];
+
 			
 			// subniveles.
 			$sql_dato2 = "SELECT s.seccion as subnivel FROM secciones s WHERE s.idseccion='".$row['subniveles']."'";
 			$rpta_dato2 = query($sql_dato2) or die(mysql_error());
 			$fila_dato2 = fetch_array($rpta_dato2);			
-			
+			$fila_dato2 = $fila_dato2[0];			
+
 			$resto = ($i % $columnes); # Número de celda del <tr> en que nos encontramos
 			
 			if ($resto == 1) 
@@ -282,7 +300,12 @@
 								  <td>&nbsp;</td>
 							   </tr>
 							   <tr>
-								  <td colspan="2"><span><a href="jbg-electric-detalle-producto-lima-peru.php?idmarca='.$row['idmarca'].'&idseccion='.$row['idproducto'].'&nom_marca='.$row['nombre_marca'].'&seccion='.$row['seccion'].'&subseccion='.$fila_dato1['subseccion'].'&subnivel='.$fila_dato2['subnivel'].'&producto='.$row['idproducto'].'">Ver detalles</a></span></td>
+									<td colspan="2">
+										<span>
+											<a href="inovalec-electric-detalle-producto-lima-peru.php?idmarca='.$row['idmarca'].'&idseccion='.$row['idproducto'].'&nom_marca='.$row['nombre_marca'].'&seccion='.$row['seccion'].'&subseccion='.$fila_dato1['subseccion'].'&subnivel='.$fila_dato2['subnivel'].'&producto='.$row['idproducto'].'"> Ver detalles
+											</a>
+										</span>
+									</td>
 							   </tr>
 							   <tr>
 								  <td colspan="2">&nbsp;</td>
@@ -319,9 +342,9 @@
 		
 			echo "<div id = \"pag\">";
 			
-			#pregunto si hay resultados para paginar.
+			#mysql_free_result($rpta_buscarProductos);				
 			
-			mysql_free_result($rpta_buscarProductos);				
+			#pregunto si hay resultados para paginar.
 			
 			if($total_registros) 
 			{
@@ -333,7 +356,7 @@
 				}
 				
 				
-				for ($i=1; $i<=$total_paginas; $i++)
+				for ( $i=1; $i<=$total_paginas; $i++)
 				{ 
 					if ($pagina == $i) 
 					{
@@ -342,7 +365,7 @@
 					} 
 					else 
 					{
-						echo "<a href=\"sumelect-resultado-busqueda-productos-peru.php?pagina=$i$a\" >".$i."</a>";
+						echo "<a href=\"inovalec-electric-resultados-busqueda-lima-peru.php?pagina=$i$a\" >".$i."</a>";
 				
 					}	
 				}
@@ -353,17 +376,14 @@
 				}
 			
 			}
-			else
-			{
-			
-			}
+			else{ }
 			
 			echo "</div>";
 		
 		echo '</div>';
 		
-		return $rs_rpta_eventos;
-		
+		//return $rs_rpta_eventos;
+		return true;
 	}
 	
 /***********************************************************************************************************************************/	

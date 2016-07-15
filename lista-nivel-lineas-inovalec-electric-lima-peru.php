@@ -69,7 +69,7 @@
             ?>
               <ul class="dos_columnas">
                 <li>
-                  <a href="linea-productos-inovalec-electric-lima-peru.php?idsubnivel=<?= $row['idseccion'] ?>&nom_marca=<?= $linea ?>&seccion=<?= $row['seccion'] ?>&subnivel=<?= $row['seccion'] ?>#lineas"><?= $row['seccion'] ?>
+                  <a href="linea-productos-inovalec-electric-lima-peru.php?idsubnivel=<?= $row['idseccion'] ?>&nom_marca=<?= $linea ?>&seccion=<?= $sublinea; ?>&subnivel=<?= $row['seccion'] ?>#lineas"><?= $row['seccion'] ?>
                   </a> <!-- /. -->
                 </li> <!-- /li -->
               </ul> <!-- /dos_columnas -->
