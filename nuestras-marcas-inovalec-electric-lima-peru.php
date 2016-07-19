@@ -35,14 +35,49 @@ include("includes/page/banner.php");
         <!-- Item -->
         <div class="col s12 m3">
           <figure class="item-marca">
-            <img src="images/marcas/mapa-jbg-electric-lima-peru.jpg" class="responsive-img" />  
+            <img src="images/marcas/logo-abro-soluciones.jpg" class="responsive-img" />  
           </figure><!-- /.item-marca -->
         </div><!-- /.col s12 m3 -->
 
         <!-- Item -->
         <div class="col s12 m3">
           <figure class="item-marca">
-            <img src="images/marcas/marca-3m-jbg.jpg" class="responsive-img" />  
+            <img src="images/marcas/logo-bahco-soluciones.jpg" class="responsive-img" />  
+          </figure><!-- /.item-marca -->
+        </div><!-- /.col s12 m3 -->
+
+        <!-- Item -->
+        <div class="col s12 m3">
+          <figure class="item-marca">
+            <img src="images/marcas/logo-ide-soluciones.jpg" class="responsive-img" />  
+          </figure><!-- /.item-marca -->
+        </div><!-- /.col s12 m3 -->
+
+        <!-- Item -->
+        <div class="col s12 m3">
+          <figure class="item-marca">
+            <img src="images/marcas/logo-sika-soluciones.jpg" class="responsive-img" />  
+          </figure><!-- /.item-marca -->
+        </div><!-- /.col s12 m3 -->
+
+        <!-- Item -->
+        <div class="col s12 m3">
+          <figure class="item-marca">
+            <img src="images/marcas/logo-solera-soluciones.jpg" class="responsive-img" />  
+          </figure><!-- /.item-marca -->
+        </div><!-- /.col s12 m3 -->
+
+        <!-- Item -->
+        <div class="col s12 m3">
+          <figure class="item-marca">
+            <img src="images/marcas/logo-talmasa-soluciones.jpg" class="responsive-img" />  
+          </figure><!-- /.item-marca -->
+        </div><!-- /.col s12 m3 -->
+
+        <!-- Item -->
+        <div class="col s12 m3">
+          <figure class="item-marca">
+            <img src="images/marcas/logo-thermoweld-soluciones.jpg" class="responsive-img" />  
           </figure><!-- /.item-marca -->
         </div><!-- /.col s12 m3 -->
 
@@ -53,19 +88,6 @@ include("includes/page/banner.php");
           </figure><!-- /.item-marca -->
         </div><!-- /.col s12 m3 -->
 
-        <!-- Item -->
-        <div class="col s12 m3">
-          <figure class="item-marca">
-            <img src="images/marcas/marca-abb-jbg.jpg" class="responsive-img" />  
-          </figure><!-- /.item-marca -->
-        </div><!-- /.col s12 m3 -->
-
-        <!-- Item -->
-        <div class="col s12 m3">
-          <figure class="item-marca">
-            <img src="images/marcas/marca-abb-sumelect.jpg" class="responsive-img" />  
-          </figure><!-- /.item-marca -->
-        </div><!-- /.col s12 m3 -->
 
         <!-- Item -->
         <div class="col s12 m3">
@@ -80,39 +102,152 @@ include("includes/page/banner.php");
             <img src="images/marcas/marca-aibar.jpg" class="responsive-img" />  
           </figure><!-- /.item-marca -->
         </div><!-- /.col s12 m3 -->
-
+        
         <!-- Item -->
         <div class="col s12 m3">
           <figure class="item-marca">
             <img src="images/marcas/marca-amp-netconnect.jpg" class="responsive-img" />  
           </figure><!-- /.item-marca -->
-        </div><!-- /.col s12 m3 -->
-
+        </div><!-- /.col s12 m3 -->  
+              
         <!-- Item -->
         <div class="col s12 m3">
           <figure class="item-marca">
             <img src="images/marcas/marca-bremas.jpg" class="responsive-img" />  
           </figure><!-- /.item-marca -->
-        </div><!-- /.col s12 m3 -->
-
+        </div><!-- /.col s12 m3 -->   
+                   
         <!-- Item -->
         <div class="col s12 m3">
           <figure class="item-marca">
-            <img src="images/marcas/marca-bticino-jbg.jpg" class="responsive-img" />  
+            <img src="images/marcas/marca-bticino.jpg" class="responsive-img" />  
           </figure><!-- /.item-marca -->
-        </div><!-- /.col s12 m3 -->
-
-        <!-- Item -->
-        <div class="col s12 m3">
-          <figure class="item-marca">
-            <img src="images/marcas/marca-celsa-sumelect.jpg" class="responsive-img" />  
-          </figure><!-- /.item-marca -->
-        </div><!-- /.col s12 m3 -->
-
+        </div><!-- /.col s12 m3 -->   
+                        
         <!-- Item -->
         <div class="col s12 m3">
           <figure class="item-marca">
             <img src="images/marcas/marca-centelsa.jpg" class="responsive-img" />  
+          </figure><!-- /.item-marca -->
+        </div><!-- /.col s12 m3 -->    
+                            
+        <!-- Item -->
+        <div class="col s12 m3">
+          <figure class="item-marca">
+            <img src="images/marcas/marca-coel.jpg" class="responsive-img" />  
+          </figure><!-- /.item-marca -->
+        </div><!-- /.col s12 m3 -->
+
+        <!-- Item -->
+        <div class="col s12 m3">
+          <figure class="item-marca">
+            <img src="images/marcas/marca-crc.jpg" class="responsive-img" />  
+          </figure><!-- /.item-marca -->
+        </div><!-- /.col s12 m3 -->    
+                                
+        <!-- Item -->
+        <div class="col s12 m3">
+          <figure class="item-marca">
+            <img src="images/marcas/marca-elcope.jpg" class="responsive-img" />  
+          </figure><!-- /.item-marca -->
+        </div><!-- /.col s12 m3 -->     
+
+        <!-- Item -->
+        <div class="col s12 m3">
+          <figure class="item-marca">
+            <img src="images/marcas/marca-fluke.jpg" class="responsive-img" />  
+          </figure><!-- /.item-marca -->
+        </div><!-- /.col s12 m3 -->   
+
+        <!-- Item -->
+        <div class="col s12 m3">
+          <figure class="item-marca">
+            <img src="images/marcas/marca-general-electric.jpg" class="responsive-img" />  
+          </figure><!-- /.item-marca -->
+        </div><!-- /.col s12 m3 -->  
+                                      
+        <!-- Item -->
+        <div class="col s12 m3">
+          <figure class="item-marca">
+            <img src="images/marcas/marca-indeco.jpg" class="responsive-img" />  
+          </figure><!-- /.item-marca -->
+        </div><!-- /.col s12 m3 -->  
+                                            
+        <!-- Item -->
+        <div class="col s12 m3">
+          <figure class="item-marca">
+            <img src="images/marcas/marca-koplat.jpg" class="responsive-img" />  
+          </figure><!-- /.item-marca -->
+        </div><!-- /.col s12 m3 -->
+
+                                            
+        <!-- Item -->
+        <div class="col s12 m3">
+          <figure class="item-marca">
+            <img src="images/marcas/marca-legrand.jpg" class="responsive-img" />  
+          </figure><!-- /.item-marca -->
+        </div><!-- /.col s12 m3 -->
+                                            
+        <!-- Item -->
+        <div class="col s12 m3">
+          <figure class="item-marca">
+            <img src="images/marcas/marca-mennekes.jpg" class="responsive-img" />  
+          </figure><!-- /.item-marca -->
+        </div><!-- /.col s12 m3 -->
+
+        <!-- Item -->
+        <div class="col s12 m3">
+          <figure class="item-marca">
+            <img src="images/marcas/marca-miguelez.jpg" class="responsive-img" />  
+          </figure><!-- /.item-marca -->
+        </div><!-- /.col s12 m3 -->    
+
+        <!-- Item -->
+        <div class="col s12 m3">
+          <figure class="item-marca">
+            <img src="images/marcas/marca-pavco.jpg" class="responsive-img" />  
+          </figure><!-- /.item-marca -->
+        </div><!-- /.col s12 m3 -->   
+                                                 
+        <!-- Item -->
+        <div class="col s12 m3">
+          <figure class="item-marca">
+            <img src="images/marcas/marca-roker.jpg" class="responsive-img" />  
+          </figure><!-- /.item-marca -->
+        </div><!-- /.col s12 m3 -->
+                                                         
+        <!-- Item -->
+        <div class="col s12 m3">
+          <figure class="item-marca">
+            <img src="images/marcas/marca-schneider.jpg" class="responsive-img" />  
+          </figure><!-- /.item-marca -->
+        </div><!-- /.col s12 m3 -->    
+
+        <!-- Item -->
+        <div class="col s12 m3">
+          <figure class="item-marca">
+            <img src="images/marcas/marca-stanley.jpg" class="responsive-img" />  
+          </figure><!-- /.item-marca -->
+        </div><!-- /.col s12 m3 -->  
+                                                               
+        <!-- Item -->
+        <div class="col s12 m3">
+          <figure class="item-marca">
+            <img src="images/marcas/marca-tecnofil-jbg.jpg" class="responsive-img" />  
+          </figure><!-- /.item-marca -->
+        </div><!-- /.col s12 m3 -->    
+
+        <!-- Item -->
+        <div class="col s12 m3">
+          <figure class="item-marca">
+            <img src="images/marcas/marca-tramontina-jbg.jpg" class="responsive-img" />  
+          </figure><!-- /.item-marca -->
+        </div><!-- /.col s12 m3 -->  
+
+        <!-- Item -->
+        <div class="col s12 m3">
+          <figure class="item-marca">
+            <img src="images/marcas/marca-vainsa.jpg" class="responsive-img" />  
           </figure><!-- /.item-marca -->
         </div><!-- /.col s12 m3 -->
 
