@@ -158,13 +158,17 @@
 
                 <!-- titulo -->
                 <h3 class="sectionPage__productos__description__title"><?= $row_detalle_producto[0]['nombre_producto'] ?></h3>
-                <!-- secciones de informacion -->
-                <section class="col s12 m6">
 
-                  <!-- Imagen de marca -->
-                  <figure>
+                <!-- Logo de Marca -->
+                <div class="col s12">
+                   <!-- Imagen de marca -->
+                  <figure class="">
                     <img src="images/marcas/<?= $row_detalle_producto[0]['imagen_marca']; ?>" />
                   </figure> <!-- /figure -->
+                </div> <!-- /. -->
+
+                <!-- secciones de informacion -->
+                <section class="col s12 m6">
 
                   <!-- tabla -->
                   <table class="sectionPage__productos__description__table" border="0" cellpadding="0" cellspacing="0" align="">
@@ -205,7 +209,7 @@
                 </section><!-- /.col s12 m6 -->
                 <section class="col s12 m6">
                   <!-- Imagen de Producto -->
-                  <figure>
+                  <figure class="sectionPage__productos__imagen">
                     <img src="images/productos/<?= $row_detalle_producto[0]['imagen_detalle']; ?>" class="responsive-img" />
                   </figure>
                 </section><!-- /.col s12 m6 -->
