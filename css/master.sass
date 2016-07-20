@@ -601,6 +601,39 @@ textarea.materialize-textarea:focus:not([readonly])
 		padding: 10px
 	
 /***************************************************************************************/
+/**----------------------------- TABLA DE BÚSQUEDA -----------------------------------**/
+/***************************************************************************************/
+
+//Contenedor de Tablas 
+.containerTable__search
+	//celdas
+	.container-cell
+		border: 2px solid $color_blue
+		width : 32.5%
+	//Titulos o nombre de producto
+	.productName 
+		margin: 0 auto 10px
+		//link
+		a 
+			color: $color_blue
+
+//Contenedor de Paginación
+#paginacion
+	margin: 20px 0 0
+	//links
+	a 
+		color          : $color_blue
+		display        : inline-block
+		font-size      : 20px 
+		font-weight    : 700
+		margin         : 0 5px 0 0
+		text-decoration: none 
+		//seleccionado
+		&.sel
+			color: $color_orange_btn
+
+
+/***************************************************************************************/
 /**---------------------------------   PAGINA SERVICIOS ------------------------------**/
 /***************************************************************************************/
 

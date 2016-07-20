@@ -239,7 +239,7 @@
 		$rpta_buscarProductos = query($cadbusca) or die(mysql_error());		
 		$total_paginas        = ceil($total_registros / $registros);
 		
-		echo "<table align='left' border = '0'>";
+		echo "<table class='containerTable__search' align='left' border = '0'>";
 		
 		$columnes = 3; # Número de columnas (variable)
 
@@ -275,47 +275,38 @@
 			{
 				echo "<tr>"; # Si es la primera celda, abrimos <tr>
 			}
+		?>
+
+		<!-- Filas y celdas para mostrar los resultados -->
+		<td class="container-cell">
+			<!-- Tabla Interior -->
+			<table> 
+				<!-- Imagen de producto -->
+				<td width="25%">
+					<img src="images/productos/<?= $row['imagen']; ?>" style="width:84px; height: auto;" />
+				</td> <!--/ -->
+				<!-- Detalles de producto -->
+				<td width="75%">
+					<!-- Nombre -->
+					<h3 class="productName"> 
+						<a href="<?= 'inovalec-electric-detalle-producto-lima-peru.php?idmarca='.$row['idmarca'].'&idseccion='.$row['idproducto'].'&nom_marca='.$row['nombre_marca'].'&seccion='.$row['seccion'].'&subseccion='.$fila_dato1['subseccion'].'&subnivel='.$fila_dato2['subnivel'].'&producto='.$row['idproducto'] ?>">
+						<?= $row['nombre_producto']; ?>
+						</a>  
+					</h3> <!--/productName -->
+
+					<!-- Codigo -->
+					<p><strong>Código: <?= $row['codigo_prod']; ?></strong></p> 
+
+					<!-- Marca -->
+					<p><strong>Marca: <?= $row['nombre_marca']; ?></strong></p> 
+
+				</td> <!--/ -->
+
+			</table> <!-- /table -->
+		</td>
 				
-				echo '
-					  <td width="340"><table width="308" border="0" cellspacing="0" cellpadding="0">
-						 <tr>
-							<td width="98" valign="top"><img src="images/productos/'.$row['imagen'].'" width="84" height="84" /></td>
-							<td width="210" valign="top"><table width="210" border="0" align="center" cellpadding="0" cellspacing="0">
-							   <tr>
-								  <td colspan="2"><span style="color:#000;">Nombre del producto</span></td>
-								  </tr>
-							   <tr>
-								  <td colspan="2"><span>'.$row['nombre_producto'].'</span></td>
-								  </tr>
-							   <tr>
-								  <td width="97"><span style="color:#000;">Marca:</span></td>
-								  <td width="113">'.$row['nombre_marca'].'</td>
-							   </tr>
-							   <tr>
-								  <td><span style="color:#000;">Codigo</span></td>
-								  <td>'.$row['codigo_prod'].'</td>
-							   </tr>
-							   <tr>
-								  <td>&nbsp;</td>
-								  <td>&nbsp;</td>
-							   </tr>
-							   <tr>
-									<td colspan="2">
-										<span>
-											<a href="inovalec-electric-detalle-producto-lima-peru.php?idmarca='.$row['idmarca'].'&idseccion='.$row['idproducto'].'&nom_marca='.$row['nombre_marca'].'&seccion='.$row['seccion'].'&subseccion='.$fila_dato1['subseccion'].'&subnivel='.$fila_dato2['subnivel'].'&producto='.$row['idproducto'].'"> Ver detalles
-											</a>
-										</span>
-									</td>
-							   </tr>
-							   <tr>
-								  <td colspan="2">&nbsp;</td>
-							   </tr>							   
-							</table></td>
-						 </tr>
-					  </table>
-					</td>
-				
-				';
+		<?php
+
 			if ($resto == 0)
 			{
 				echo "</tr>";
@@ -337,6 +328,8 @@
 		}
 		
 		echo "</table>";
+
+		echo "<div style='clear:both'></div>";
 		
 		echo '<div id="paginacion">';
 		
