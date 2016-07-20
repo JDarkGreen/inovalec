@@ -201,6 +201,14 @@
 
 		$rpta_buscar     = query($sql_buscar);
 		$total_registros = num_rows($rpta_buscar);
+
+		/**
+		* Si los registros están vacios
+ 		**/
+ 		if( $total_registros == 0 )
+ 		{
+ 			echo "<h2> No hay resultados para mostrar. Puede consultar otro producto </h2>";
+ 		}
 		
 		# Segunda consulta.
 		if ($buscar<>'')

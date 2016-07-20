@@ -37,20 +37,42 @@ include("includes/page/banner.php");
             $row_producto_promocion = fetch_array($rpta_listar_promocion); 
             foreach( $row_producto_promocion as $producto_promo ) :
           ?>
-            <article class="sectionPortada__promociones__content__item col s12 m3">
+
+            <article class="sectionPortada__promociones__content__item col s12 m6">
               <div class="item-promocion">
                 <h2 class="center text-uppercase"><?= $producto_promo['titulo_promocion']; ?></h2>
-                <!-- Imagen -->
-                <figure>
-                  <img class="center-block owl-lazy" src="images/productos/promociones/<?= $producto_promo['imagen_promocion']; ?>" />
-                </figure><!-- /figure -->
-                <!-- Span Contenedor  -->
-                <span class="bg_container__btn text-center">
-                  <!-- Boton cotizar -->
-                  <a href="venta-en-linea-inovalec-electric-lima-peru.php" class="btn__cotizar">Cotizar</a>
-                </span><!-- /. bg_container__btn-->
+
+                <!-- Fila -->
+                <div class="item-promocion__content">
+
+                    <div class="col s12 m5">
+                        <!-- Imagen -->
+                        <figure>
+                          <img class="center-block owl-lazy" src="images/productos/promociones/<?= $producto_promo['imagen_promocion']; ?>" />
+                        </figure><!-- /figure --> 
+                    </div> <!-- /.col s12 m4 -->
+
+                    <div class="col s12 m7">
+                        
+                        <!-- Descripción de Promoción -->
+                        <div class="container-description">
+                            <h4><strong> Descripción: </strong></h4>
+                    
+                            <?= $producto_promo['descripcion']; ?>
+                        </div> <!-- /.container-description -->
+
+                        <!-- Span Contenedor  -->
+
+                        <!--span class="bg_container__btn text-center"-->
+                          <!-- Boton cotizar -->
+                          <!--a href="venta-en-linea-inovalec-electric-lima-peru.php" class="btn__cotizar">Cotizar</a-->
+                        <!--/span--><!-- /. bg_container__btn-->
+                    </div> <!-- /.col s12 m4 -->
+
+                </div> <!-- /.row -->
               </div> <!-- /.item-promocion -->
             </article><!-- /article -->
+
           <?php endforeach; ?>
           </div> <!-- /.row -->
       </section><!-- /.sectionPortada__promociones__content -->
