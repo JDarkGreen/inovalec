@@ -54,7 +54,7 @@
                     <i class="icon left"><img src="images/contacto/iconos_contacto_telefono.png" alt="telefono" class="responsive-img" /></i>
                     <!-- Texto -->
                     <h3 class="text-uppercase">teléfono: </h3>
-                    <p>  </p>
+                    <p> 493-4752 </p>
                     <!-- Clearfix --> <div class="clearfix"></div>
                   </li>
                   <!-- Mail -->

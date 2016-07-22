@@ -89,6 +89,7 @@
               <td class="tdrow1">Imagen promoción</td>
               <td colspan="2"><input name="imagen_promocion" type="file" class="formularios" id="imagen_promocion" /></td>
             </tr>
+            <?php /*
             <tr>
               <td valign="top" class="tdrow1">Sumilla</td>
               <td colspan="2" valign="top">
@@ -114,7 +115,7 @@
                 $ckeditor->editor('sumilla', $initialValue);
                 
             ?></td>
-           </tr>
+           </tr> */ ?>
             <tr>
                <td valign="top" class="tdrow1">Descripcion</td>
                <td colspan="2" valign="top">

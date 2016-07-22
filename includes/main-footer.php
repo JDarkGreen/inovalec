@@ -27,15 +27,31 @@
 			  			<!--li><i><img src="images/contacto/iconos_contacto_telefono.png" alt="iconos_contacto_telefono" class="responsive-img"></i> Telf: 427-3928 </li-->
 
 			  			<!-- Email -->
-			  			<li><i><img src="images/contacto/iconos_contacto_mail.png" alt="iconos_contacto_mail" class="responsive-img"></i> tquintana@inovalec.com.pe  </li>			  			
+			  			<!--li>
+			  				<i><img src="images/contacto/iconos_contacto_mail.png" alt="iconos_contacto_mail" class="responsive-img"></i> 
+			  				Asesores Comerciales: <br/> tquintana@inovalec.com.pe  </li-->	
+
+			  			<!-- Central de ventas -->
+			  			<li>  Central de Ventas: <br><br>
+			  				<i><img src="images/contacto/iconos_contacto_telefono.png" alt="iconos_contacto_rpm" class="responsive-img"></i> 
+			  				Tel: 4934752
+			  			</li>	
+
 			  			<!-- Celular -->
-			  			<li><i><img src="images/contacto/iconos_contacto_rpm.png" alt="iconos_contacto_rpm" class="responsive-img"></i> Cel: 992724283</li>	
+			  			<li><i><img src="images/contacto/iconos_contacto_rpm.png" alt="iconos_contacto_rpm" class="responsive-img"></i> Cel: 992724283 / 997528228</li>	
 
 			  			<!-- Email -->
-			  			<li><i><img src="images/contacto/iconos_contacto_mail.png" alt="iconos_contacto_mail" class="responsive-img"></i> mcoba@inovalec.com.pe  </li>
+			  			<!--li><i><img src="images/contacto/iconos_contacto_mail.png" alt="iconos_contacto_mail" class="responsive-img"></i> mcoba@inovalec.com.pe  </li-->
 
 			  			<!-- Celular -->
-			  			<li><i><img src="images/contacto/iconos_contacto_rpm.png" alt="iconos_contacto_rpm" class="responsive-img"></i> Cel: 997528228 </li>
+			  			<!--li><i><img src="images/contacto/iconos_contacto_rpm.png" alt="iconos_contacto_rpm" class="responsive-img"></i> Cel: 997528228 </li-->
+
+			  			<!-- Correos -->
+			  			<li>  Correos: <br><br>
+			  				<i><img src="images/contacto/iconos_contacto_mail.png" alt="iconos_contact
+			  				o" class="responsive-img"></i> 
+			  				ventas@inovalec.com.pe
+			  			</li>
 
 			  		</ul><!-- /. -->
 			  	</article>
