@@ -66,7 +66,19 @@ textarea.materialize-textarea:focus:not([readonly])
 	overflow  : hidden
 	padding   : 40px 
 
+/*** Sección de Botones **/
 
+//Boton de Comprar 
+.btnComprar
+	color     : white 
+	background: #006699
+	padding   : 10px 15px 
+	+border-radius( 5px )
+	margin    : 5px 
+	position  : relative 
+	+transition( all 500ms ease )
+	&:hover 
+		+scale( 1.1 )
 
 /***************************************************************************************/
 /**-------------------------- CLASES Y OBJETOS  ---------------------------------------**/
@@ -422,9 +434,10 @@ textarea.materialize-textarea:focus:not([readonly])
 
 	//tabla
 	table 
-		font-size : 14px 
-
+		font-size : 14px
+		text-align: center 
 		td
+			text-align: center
 			&.tdrow1
 				color       : black
 				border      : 1px solid #E0E0E0
@@ -453,11 +466,14 @@ textarea.materialize-textarea:focus:not([readonly])
 
 //Imagen de Producto - figure
 .sectionPage__productos__imagen
-	align-items    : center
-	display        : flex
-	height         : 230px
-	justify-content: center
+	display        : flex  
+	height         : 304px
+	margin         : 0 auto 
 	width          : 100%
+	width          : 304px
+	/** Imágenes */
+	img 
+		height: auto !important
 
 //Buscador
 #form_buscar-1 
@@ -629,7 +645,7 @@ textarea.materialize-textarea:focus:not([readonly])
 .containerTable__search
 	//celdas
 	.container-cell
-		border: 2px solid $color_blue
+		border: 5px solid #5081a9
 		width : 32.5%
 	//Titulos o nombre de producto
 	.productName 

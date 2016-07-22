@@ -23,15 +23,16 @@ include("includes/page/banner.php");
 <!-- Linea separadora -->
 <span class="line-separator"></span>
 
-<!-- sectionHistoria Pagina Nosotros -->
+<!-- Sección de Promociones -->
 <section class="sectionPage__marcas">
   <div class="container">
     <!-- Contendor background white -->
     <section class="bgPage--white">
       <!-- Titulo -->
-      <h2 class="sectionCommon__title-page sectionPage__marcas__title text-uppercase center"> recientes</h2>
+      <h2 class="sectionCommon__title-page sectionPage__marcas__title text-uppercase center"> promociones del mes </h2>
 
       <section class="sectionPortada__promociones__content relative">
+        
         <div class="row">
           <?php 
             $row_producto_promocion = fetch_array($rpta_listar_promocion); 
@@ -74,10 +75,14 @@ include("includes/page/banner.php");
             </article><!-- /article -->
 
           <?php endforeach; ?>
-          </div> <!-- /.row -->
+        </div> <!-- /.row -->
+
+        <!-- Botón de Comprar - redirección a página  -->
+        <a href="venta-en-linea-inovalec-electric-lima-peru.php" class="btnComprar text-uppercase"> comprar </a>
+
       </section><!-- /.sectionPortada__promociones__content -->
 
-      <!-- Linea separadora -->
+      <!-- Linea separadora-->
       <span class="line-separator"></span>
 
       <!-- Saltos de Línea --> <br/><br/>
