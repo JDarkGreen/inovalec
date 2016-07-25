@@ -80,6 +80,9 @@
 	
 	function productos($subnivel)
 	{
+		//Condicion
+		$condicion = "";
+
 		# marca del producto.
 		if( isset($_GET['idmarca']) && !empty($_GET['idmarca']) )
 		{
@@ -89,7 +92,7 @@
 		# marca del producto.
 		if( isset($_GET['idsubnivel']) && !empty($_GET['idsubnivel']) )
 		{
-			$condicion = "AND p.subniveles = '".$_GET['idsubnivel']."'";
+			$condicion .= "AND p.subniveles = '".$_GET['idsubnivel']."'";
 		}			
 		
 		$sql_productos  = "SELECT p.*, s.*, m.* FROM productos p, secciones s, marcas m
